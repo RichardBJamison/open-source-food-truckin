@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<!-- Source for img/og-card.jpg (link preview). Render: headless Chrome at 1200x630, see HANDOFF. Big type so it reads on a phone. -->
+<html><head><meta charset="utf-8" />
+<link rel="stylesheet" href="fonts/fonts.css" />
+<style>
+  :root { --gold:#e0b04a; --paper:#f3e2c0; --teal:#3ff0e0; --bg:#0c1228; }
+  * { margin:0; box-sizing:border-box; }
+  html, body { width:1200px; height:630px; overflow:hidden; background:var(--bg); }
+  .art { position:absolute; inset:0; background:url(img/hero-header-poster.jpg) -40px -20px / 1180px auto no-repeat; }
+  .shade { position:absolute; inset:0; background:linear-gradient(90deg, rgba(12,18,40,0) 40%, rgba(12,18,40,.88) 60%, rgba(12,18,40,.97) 100%); }
+  .copy { position:absolute; left:640px; right:40px; top:0; bottom:0; display:flex; flex-direction:column; justify-content:center; gap:22px; }
+  .brand { font-family:"Luckiest Guy", Impact, sans-serif; color:var(--gold); font-size:70px; line-height:.95; letter-spacing:.01em; text-shadow:0 4px 0 #2a1a08; }
+  .free { font-family:Georgia, serif; font-weight:700; color:var(--paper); font-size:46px; line-height:1.05; }
+  .what { font-family:"Roboto", sans-serif; color:var(--teal); font-size:30px; font-weight:600; line-height:1.2; }
+  .seal { position:absolute; right:30px; bottom:34px; width:118px; transform:rotate(-8deg); filter:drop-shadow(0 6px 10px rgba(0,0,0,.6)); }
+</style></head>
+<body>
+  <div class="art"></div><div class="shade"></div>
+  <div class="copy">
+    <div class="brand">Open Source<br/>Food Truckin'</div>
+    <div class="free">100% free<br/>&amp; bilingual</div>
+    <div class="what">Food truck inventory<br/>English · Español</div>
+  </div>
+  <img class="seal" src="img/free-seal.png" alt="" />
+</body></html>

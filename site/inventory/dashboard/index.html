@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" translate="no">
+<head>
+  <meta charset="utf-8" />
+  <meta name="google" content="notranslate" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#1a120c" />
+  <meta name="description" content="Enter The Lot. Play in the Open Source Food Truckin' sandbox with sample taco-truck data before you download and build your own truck." />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Open Source Food Truckin'" />
+  <meta property="og:title" content="The Lot — Live Demo | Open Source Food Truckin'" />
+  <meta property="og:description" content="Enter The Lot. Play in the Open Source Food Truckin' sandbox with sample taco-truck data before you download and build your own truck." />
+  <meta property="og:image" content="https://osfoodtrucking.com/img/og-card.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Open Source Food Truckin' — a night food truck, 100% free and bilingual" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://osfoodtrucking.com/img/og-card.jpg" />
+  <title data-i18n="title_lot">The Lot — Live Demo | Open Source Food Truckin'</title>
+  <link rel="icon" href="../../img/gear.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="../../fonts/fonts.css?v=2" />
+  <link rel="stylesheet" href="../../css/site.css?v=30" />
+  <script src="/js/i18n-v11.js"></script>
+  <script>
+    (function () {
+      var lang = "en";
+      try {
+        var q = /(?:^|[?&])lang=(en|es)(?:&|$)/.exec(location.search);
+        if (q) lang = q[1];
+        else {
+          var s = localStorage.getItem("osft_lang");
+          if (s === "es" || s === "en") lang = s;
+          else {
+            var m = document.cookie.match(/(?:^|;\s*)osft_lang=(en|es)(?:;|$)/);
+            if (m) lang = m[1];
+          }
+        }
+      } catch (e) {}
+      document.documentElement.lang = lang;
+      if (lang === "es") document.documentElement.classList.add("osft-i18n-wait");
+      setTimeout(function () { document.documentElement.classList.remove("osft-i18n-wait"); }, 2000);
+    })();
+  </script>
+</head>
+<body class="lot-page">
+  <a class="skip" href="#main" data-i18n="skip">Skip to content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="../../">
+        <img class="brand-truck" src="../../img/header-truck.webp" width="220" height="160" alt="" />
+        <span class="brand-copy">
+          <span class="brand-name">Open Source Food Truckin'</span>
+          <span class="brand-tag" data-i18n="brand_tag">The mobile kitchen inventory system, proudly part of the Open Source Barware family.</span>
+        </span>
+      </a>
+      <nav class="nav" id="site-nav" aria-label="Primary">
+        <a href="../../" data-i18n="nav_home">Home</a>
+        <a href="../../the-process/"><span data-i18n="nav_process">The Process</span><small data-i18n="nav_process_s">Walk the truck</small></a>
+        <a href="../../about/"><span data-i18n="nav_about">About</span><small data-i18n="nav_about_s">The Truck Stop</small></a>
+        <a href="../../resources/"><span data-i18n="nav_res">Resources</span><small data-i18n="nav_res_s">Mobile Menu</small></a>
+        <a href="../../inventory/dashboard/" class="is-here"><span data-i18n="nav_demo">Live Demo</span><small data-i18n="nav_demo_s">The Lot</small></a>
+        <a href="../../download/" class="nav-cta" data-i18n="nav_dl">Download Program</a>
+      </nav>
+      <div class="header-end">
+        <div class="lang" role="group" aria-label="Language">
+          <button type="button" data-locale="en" class="is-on" aria-pressed="true">EN</button>
+          <button type="button" data-locale="es" aria-pressed="false">ES</button>
+        </div>
+        <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="site-nav">
+          <span></span><span></span><span></span>
+          <span class="sr" data-i18n="menu">Menu</span>
+        </button>
+      </div>
+    </div>
+  </header>
+  <div class="lot-banner">
+    <div>
+      <p class="kicker" style="margin:0 0 6px" data-i18n="lot_k">The Lot · Live Demo</p>
+      <p><span data-i18n="lot_p">Playable sample taco truck — same program as the download. Click around Home base, count sheet, POS, menu, load lists. This is a sandbox on this computer, not your truck. Download to run it for real.</span> <a href="../../download/" data-i18n="nav_dl">Download</a></p>
+    </div>
+    <a class="btn btn-gold" href="http://127.0.0.1:5054/" target="_blank" rel="noopener" data-i18n="lot_open">Open The Lot in its own window</a>
+  </div>
+  <main id="main">
+    <iframe class="lot-frame" title="Open Source Food Truckin' live demo" src="http://127.0.0.1:5054/"></iframe>
+  </main>
+
+  <script>
+    window.OFFER_TRACKER = {
+      siteId: "osft-landing",
+      ga4Id: "",
+      endpoint: "https://opensourcebarware.com/api/nexus-collect",
+      clarityId: "",
+      debug: false
+    };
+  </script>
+  <script src="/js/tracker.js?v=2" defer></script>
+  <script src="/js/site-v11.js"></script>
+</body>
+</html>

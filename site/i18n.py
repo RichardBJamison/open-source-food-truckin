@@ -1,0 +1,826 @@
+# EN/ES copy for the OSFT marketing site. build_site.py writes js/i18n.js from this.
+I18N = {
+  "en": {},
+  "es": {},
+}
+
+def add(key, en, es):
+    I18N["en"][key] = en
+    I18N["es"][key] = es
+
+# Header / chrome
+add("menu", "Menu", "Menú")
+add("skip", "Skip to content", "Saltar al contenido")
+add("lang", "Language", "Idioma")
+add("brand_tag", "The mobile kitchen inventory system, proudly part of the Open Source Barware family.",
+    "El inventario de la cocina móvil, de la familia Open Source Barware.")
+add("nav_home", "Home", "Inicio")
+add("nav_process", "The Process", "El Proceso")
+add("nav_process_s", "Walk the truck", "Caminar el truck")
+add("nav_about", "About", "Acerca de")
+add("nav_about_s", "The Truck Stop", "The Truck Stop")
+add("nav_res", "Resources", "Recursos")
+add("nav_res_s", "Mobile Menu", "Menú móvil")
+add("nav_demo", "Live Demo", "Demo en vivo")
+add("nav_demo_s", "The Lot", "The Lot")
+add("nav_dl", "Download Program", "Descargar")
+add("cta_app", "Download Program", "Descargar el programa")
+add("cta_menu", "Learn this system", "Aprender el sistema")
+add("cta_story", "Read our story", "Leer la historia")
+add("cta_demo", "Live Demo", "Demo en vivo")
+add("cta_res", "Explore community resources", "Ver recursos de la comunidad")
+add("cta_lot", "Play in The Lot", "Jugar en The Lot")
+add("cta_process", "See The Process", "Ver El Proceso")
+add("cta_manifesto", "Read the manifesto", "Leer el manifiesto")
+add("cta_guide", "Read the program guide", "Leer la guía del programa")
+add("cta_notes", "← All notes", "← Todas las notas")
+add("read_more", "Read more →", "Leer más →")
+
+# Home hero
+add("hero_h1", "The real truck problem,", "El problema real del truck,")
+add("hero_h2", "solved on the go.", "resuelto en marcha.")
+add("hero_p", "Tame the chaos of a rolling kitchen. From the same house as Open Source Barware: track supplies, pull last night’s POS, cost every plate, and print a load list — festival lot or street corner.",
+    "Domina el caos de una cocina que rueda. De la misma casa que Open Source Barware: controla el inventario, importa el POS de anoche, calcula el costo por plato e imprime la lista de carga — festival o esquina.")
+add("hero_find", "Find this and the bar tools at OpenSourceBarware.com.",
+    "Esto y las herramientas de bar están en OpenSourceBarware.com.")
+add("asphalt_kicker", "Waste-o-meter", "Waste-o-meter")
+add("asphalt_h", "Built on the asphalt", "Hecho en el asfalto")
+add("asphalt_note", "Same kitchen that made Open Source Barware. This one just has a parking brake.",
+    "La misma cocina que hizo Open Source Barware. Esta trae freno de mano.")
+add("launch_h", "Global launch", "Lanzamiento global")
+add("launch_p", "Launching for the whole crew. Food Truckin' for the rolling kitchen, Barware for the well. Fully bilingual in English and Spanish.",
+    "Para toda la cuadrilla. Food Truckin' para la cocina sobre ruedas, Barware para la barra. Completamente bilingüe en inglés y español.")
+add("launch_es", "¡Disponible en español! Completamente bilingüe.",
+    "¡Disponible en español! Completamente bilingüe.")
+add("free_h", "100% free & bilingual", "100% gratis y bilingüe")
+add("free_p", "Free and open source under GPLv3. Runs on your own computer. No subscription, ever. The whole crew can work in English or Spanish.",
+    "Gratis y de código abierto bajo GPLv3. Corre en tu propia computadora. Sin suscripción, nunca. Toda la cuadrilla puede trabajar en inglés o español.")
+
+# Home stats / problem / workshop
+add("stat_cost", "Cost", "Costo")
+add("stat_prog", "Free program", "Programa gratis")
+add("stat_steps", "Easy steps", "Pasos fáciles")
+add("stat_steps_s", "Each week", "Cada semana")
+add("stat_simple", "Simple", "Simple")
+add("stat_simple_s", "Add data. Get inventory.", "Agrega datos. Obtén inventario.")
+add("prob_k", "The Problem", "El problema")
+add("prob_h", "Every truck operator knows the drill.", "Todo operador de truck conoce el ritual.")
+add("prob_p1", "End of the night. Generator still running. Count the cooler by flashlight. Guess the freezer. Scribble numbers on a ticket pad. Walk to the laptop in the cab. Type it into a spreadsheet someone made in 2019. Try to reconcile against last night’s Square or Toast export. Watch it never add up. Text the prep cook tomorrow’s load list. Repeat.",
+    "Fin de la noche. Generador todavía prendido. Contar la nevera con linterna. Adivinar el congelador. Anotar en un talonario. Ir a la laptop en la cabina. Meterlo a una hoja de 2019. Tratar de cuadrar con el export de Square o Toast. Ver que nunca cuadra. Mandar por texto la lista de carga. Repetir.")
+add("prob_p2", "Brick-and-mortar restaurants have been sold $249-a-month inventory platforms and invoice scanners built for four walls. Trucks get the leftover: a clipboard, a group chat, and a hope that the ice cream doesn’t thaw before Saturday’s festival.",
+    "A los restaurantes de cuatro paredes les vendieron plataformas de $249 al mes. A los trucks les queda el resto: un clipboard, un grupo de chat, y la esperanza de que el helado no se descongele antes del festival.")
+add("prob_punch", "AI changed everything. Now we can build this program for free. So we did.",
+    "La IA cambió todo. Ahora podemos construir este programa gratis. Y lo hicimos.")
+add("prob_time", "Get your time back", "Recupera tu tiempo")
+add("work_k", "The Workshop", "El taller")
+add("work_h", "Precision instruments for the rolling craft.", "Instrumentos precisos para el oficio sobre ruedas.")
+add("work_lede", "One free program. The full workflow lives inside it — Home base, inventory sheets, reports, on the truck, all inputs, menu costing, stops and load lists.",
+    "Un programa gratis. Todo el flujo vive adentro: Home base, hojas de inventario, reportes, en el truck, entradas, costeo de menú, paradas y listas de carga.")
+add("inst1_h", "Smart inventory sheets", "Hojas de inventario inteligentes")
+add("inst1_p", "Count sheet, variance, order list, and product master — cooler, freezer, dry, prep — with PAR, pack size, vendor, and Spanish names.",
+    "Hoja de conteo, merma, lista de pedido y maestro de producto — nevera, congelador, seco, prep — con PAR, empaque, proveedor y nombres en español.")
+add("inst2_h", "Variance vs. POS sales", "Merma vs. ventas del POS")
+add("inst2_p", "What you should have used from Square, Toast, Clover, or any CSV, against what the counts say you used.",
+    "Lo que debiste usar según Square, Toast, Clover o cualquier CSV, contra lo que dicen los conteos.")
+add("inst3_h", "Optional invoice photos", "Fotos de factura opcionales")
+add("inst3_p", "Type invoice lines yourself — or connect your own AI key to read paper invoice photos and PDFs. Off by default.",
+    "Escribe las líneas tú — o conecta tu propia clave de IA para leer fotos y PDFs. Apagado por defecto.")
+add("inst4_h", "380-product starter list", "Lista inicial de 380 productos")
+add("inst4_p", "Common food-truck products with units and pack sizes. No prices stuffed in — you enter what you actually pay.",
+    "Productos comunes de food truck con unidades y empaques. Sin precios metidos — tú pones lo que realmente pagas.")
+add("work_track",
+    'Tracking one part of the truck? <a href="truck-inventory/">Truck &amp; cooler inventory</a> · <a href="prep-inventory/">Prep inventory</a>',
+    '¿Solo una parte del truck? <a href="truck-inventory/">Inventario del truck y nevera</a> · <a href="prep-inventory/">Inventario de prep</a>')
+add("quote", "“If you help enough people get what they need, the universe will provide what you need.”",
+    "“Si ayudas a suficiente gente a conseguir lo que necesita, el universo te da lo que tú necesitas.”")
+add("quote_cite", "— The philosophy behind Open Source Barware, and this sister program",
+    "— La filosofía detrás de Open Source Barware, y de este programa hermano")
+add("start_k", "Get Started", "Empieza")
+add("start_h", "Open the program. Start tonight.", "Abre el programa. Empieza esta noche.")
+add("start_lede", "No signup. No email capture. No sales pitch. Download the program and get to work — or play in The Lot first.",
+    "Sin registro. Sin pedir correo. Sin pitch de ventas. Descarga el programa y ponte a trabajar — o juega primero en The Lot.")
+
+# Footer
+add("foot_brand_1", "Crafted for rolling kitchens. Given to the trade, no strings attached. Sister program to Open Source Barware — same house, a parking brake.",
+    "Hecho para cocinas que ruedan. Entregado al oficio, sin ataduras. Programa hermano de Open Source Barware — misma casa, un freno de mano.")
+add("foot_brand_2", "A Richard B. Jamison project. Free forever.",
+    "Un proyecto de Richard B. Jamison. Gratis para siempre.")
+add("foot_nav", "Navigate", "Navegar")
+add("foot_inv", "Free Inventory", "Inventario gratis")
+add("nav_manifesto", "Manifesto", "Manifiesto")
+add("nav_blog", "Blog", "Blog")
+add("nav_guide", "Program Guide", "Guía del programa")
+add("nav_compliance", "Compliance", "Cumplimiento")
+add("nav_notes", "Release notes", "Notas de versión")
+add("foot_seo_ft", "Food Truck Inventory Software", "Software de inventario para food trucks")
+add("foot_seo_truck", "Truck & Cooler Inventory", "Inventario del truck y nevera")
+add("foot_seo_prep", "Prep Inventory", "Inventario de prep")
+add("foot_seo_cmp", "Compare Alternatives", "Comparar alternativas")
+add("foot_workshop", "Workshop", "Taller")
+add("foot_workshop_p", 'From <a href="https://intelligenthospitalitysystems.com/">Intelligent Hospitality Systems</a>. Also from us: <a href="https://www.reservationrelief.com/">Reservation Relief</a>, reservations on the website you already own.',
+    'De <a href="https://intelligenthospitalitysystems.com/">Intelligent Hospitality Systems</a>. También de nosotros: <a href="https://www.reservationrelief.com/">Reservation Relief</a>, reservas en el sitio que ya tienes.')
+add("foot_resonant", 'Web & systems notes: <a href="https://resonantwebdesign.com/industries/restaurants-hospitality-web-design/" rel="noopener noreferrer">Resonant</a>',
+    'Notas de web y sistemas: <a href="https://resonantwebdesign.com/industries/restaurants-hospitality-web-design/" rel="noopener noreferrer">Resonant</a>')
+add("foot_legal", "All the program is free and open source under GPLv3",
+    "Todo el programa es gratis y de código abierto bajo GPLv3")
+add("nav_privacy", "Privacy", "Privacidad")
+add("nav_terms", "Terms", "Términos")
+add("nav_license", "License and source", "Licencia y código")
+
+# Process
+add("proc_kicker", "The Kitchen Table Version", "La versión de mesa de cocina")
+add("proc_h1", "One local program.<br>Simple to start. Industrial strength when needed.",
+    "Un programa local.<br>Simple para empezar. Fuerza industrial cuando hace falta.")
+add("proc_lede", "Install it, bookmark one page in the browser, and that page becomes your whole system. Starts as an easy guided walkthrough — walk or talk your inventory in (English, Spanish, or mixed). Grows into the most complete free food-truck inventory program we know how to ship.",
+    "Instálalo, guarda una página en el navegador, y esa página es todo el sistema. Empieza como un recorrido guiado — camina o habla el inventario (inglés, español o mezclado). Crece hasta el programa gratis de inventario para food trucks más completo que sabemos enviar.")
+add("proc_big_k", "The Big Picture", "El panorama")
+add("proc_big_h", "What you are actually using", "Lo que realmente estás usando")
+add("proc_big_lede", "One calm control panel that runs on your laptop. Starts simple for the average operator — walk or talk the truck in, easy and fast. Grows into the industrial-strength toolkit: voice, count types, POS, recipes, load lists, multi-truck, crew PINs.",
+    "Un panel calmo que corre en tu laptop. Empieza simple para el operador promedio — camina o habla el truck, fácil y rápido. Crece al toolkit industrial: voz, tipos de conteo, POS, recetas, listas de carga, varios trucks, PINs de cuadrilla.")
+add("proc_tag_one", "One Program", "Un programa")
+add("proc_one_h", "One browser-side program", "Un programa en el navegador")
+add("proc_one_p", "You open one place. It starts simple (walk or talk inventory in, English, Spanish, or mixed), then grows into the full system — zones, scales of pack size, and pinpoint counts built in.",
+    "Abres un solo lugar. Empieza simple (camina o habla el inventario, inglés, español o mezclado) y crece al sistema completo — zonas, empaques y conteos precisos.")
+add("proc_tag_change", "The Changeover", "El cambio")
+add("proc_change_h", "Caterpillar to butterfly", "De oruga a mariposa")
+add("proc_change_p", "At first it feels like a guided checklist. After the truck is mapped, the same page opens into Home base: sheets, reports, inputs, menu, stops, settings.",
+    "Al principio es una lista guiada. Cuando el truck está mapeado, la misma página abre Home base: hojas, reportes, entradas, menú, paradas, ajustes.")
+add("proc_tag_spine", "The Spine", "La columna")
+add("proc_spine_h", "Your voice in, a built map out", "Tu voz entra, un mapa sale")
+add("proc_spine_p", "You talk (or walk) the truck the way you already walk it. A parser on your laptop — no internet, no AI, no account — reads your words, lays out the map, and does the math.",
+    "Hablas (o caminas) el truck como ya lo caminas. Un parser en tu laptop — sin internet, sin IA, sin cuenta — lee tus palabras, arma el mapa y hace la cuenta.")
+add("proc_inside_k", "Inside the Home Base", "Dentro de Home base")
+add("proc_mod_home_h", "Home base", "Home base")
+add("proc_mod_home_p", "Last count, current cycle, what’s below PAR, jump-to cards, sample taco truck.",
+    "Último conteo, ciclo actual, lo que está bajo PAR, tarjetas de salto, taco truck de muestra.")
+add("proc_mod_sheets_h", "Inventory sheets", "Hojas de inventario")
+add("proc_mod_sheets_p", "Count sheet, variance, order list, product master — the workbook view.",
+    "Hoja de conteo, merma, lista de pedido, maestro de producto — la vista de libro.")
+add("proc_mod_truck_h", "On the truck", "En el truck")
+add("proc_mod_truck_p", "Zones, extra trucks, transfers, crew board. Cooler · freezer · dry · prep.",
+    "Zonas, trucks extra, transferencias, tablero de cuadrilla. Nevera · congelador · seco · prep.")
+add("proc_mod_in_h", "All inputs", "Todas las entradas")
+add("proc_mod_in_p", "POS sales, invoices & receiving, input log. Square / Toast / Clover / any CSV.",
+    "Ventas POS, facturas y recepciones, bitácora. Square / Toast / Clover / cualquier CSV.")
+add("proc_mod_menu_h", "Menu & costing", "Menú y costeo")
+add("proc_mod_menu_p", "Plate cost, food-cost %, margin. Recipe qty in the product’s own unit.",
+    "Costo por plato, % de food cost, margen. Cantidad de receta en la unidad del producto.")
+add("proc_mod_stops_h", "Stops & load lists", "Paradas y listas de carga")
+add("proc_mod_stops_p", "Lunch lot, brewery, festival — PAR per stop type, printable load list for tomorrow.",
+    "Lote de almuerzo, cervecería, festival — PAR por tipo de parada, lista de carga imprimible.")
+add("proc_gates_k", "Checks and Gates", "Chequeos y puertas")
+add("proc_gates_h", "The system slows down where it should — then unlocks full power.",
+    "El sistema frena donde debe — y luego suelta toda la potencia.")
+add("proc_g1", "Everything runs on your laptop — no account, no cloud.", "Todo corre en tu laptop — sin cuenta, sin nube.")
+add("proc_g2", "Name every cooler, freezer, dry, prep, window, commissary space.", "Nombra cada nevera, congelador, seco, prep, ventana, commissary.")
+add("proc_g3", "Ask about unclear brands, pack sizes, duplicates, missing shelves.", "Pregunta por marcas dudosas, empaques, duplicados, anaqueles faltantes.")
+add("proc_g4", "Review the first map before the first real inventory count.", "Revisa el primer mapa antes del primer conteo real.")
+add("proc_g5", "Match the weekly count, purchases, and POS report to the same date window.", "Cuadra el conteo semanal, compras y POS en la misma ventana de fechas.")
+add("proc_g6", "Add AI later — and only if you want invoice photos read for you.", "Agrega IA después — y solo si quieres que lea fotos de factura.")
+add("proc_g7", "Layer in daily counts, barcode, POs, multi-truck, crew PINs as you grow.", "Suma conteos diarios, código de barras, POs, varios trucks, PINs conforme creces.")
+add("proc_need_k", "Before Setup", "Antes del setup")
+add("proc_need_h", "What you need at the table", "Lo que necesitas en la mesa")
+add("proc_need_lede", "Nothing exotic. Just the pieces a real truck already has, gathered into one guided flow.",
+    "Nada exótico. Las piezas que un truck real ya tiene, juntas en un flujo guiado.")
+add("proc_need1_h", "A laptop", "Una laptop")
+add("proc_need1_p", "Python 3.10+ and a browser. Chrome, Edge, or Safari for voice. Typing works everywhere.",
+    "Python 3.10+ y un navegador. Chrome, Edge o Safari para voz. Escribir funciona en todos.")
+add("proc_need2_h", "A phone", "Un teléfono")
+add("proc_need2_p", "Voice notes in English or Spanish — cooler, freezer, dry, prep — naming product as you go. Or count on the phone over Wi-Fi.",
+    "Notas de voz en inglés o español — nevera, congelador, seco, prep — nombrando producto. O cuenta en el teléfono por Wi-Fi.")
+add("proc_need3_h", "A first truck walk", "Una primera caminata")
+add("proc_need3_p", "That one saved walk is the seed the built-in parser reads to build your whole truck.",
+    "Esa caminata guardada es la semilla que el parser lee para armar todo el truck.")
+add("proc_need4_h", "Invoices + POS", "Facturas + POS")
+add("proc_need4_p", "Type or paste invoice lines and pull the Square / Toast / Clover / CSV export once the first cycle is ready.",
+    "Escribe o pega líneas de factura y trae el export de Square / Toast / Clover / CSV cuando el primer ciclo esté listo.")
+add("proc_need5_h", "A careful review", "Una revisión cuidadosa")
+add("proc_need5_p", "The first map gets checked and approved before the program becomes your home base.",
+    "El primer mapa se revisa y aprueba antes de que el programa sea tu home base.")
+add("proc_need6_h", "Optional: your own AI", "Opcional: tu propia IA")
+add("proc_need6_p", "Not required for anything. Add it only if you want invoice photos read instead of typing.",
+    "No se requiere para nada. Agrégala solo si quieres que lea fotos de factura en vez de escribir.")
+add("proc_first_k", "First Setup", "Primer setup")
+add("proc_first_h", "How it goes from first walk to home base", "De la primera caminata a home base")
+add("proc_first_p", "The first setup is meant to feel like a guided conversation. Do one thing, check it, then move to the next. Starts simple — the full toolkit is already inside when you need it.",
+    "El primer setup se siente como una conversación guiada. Haz una cosa, revísala, sigue. Empieza simple — el toolkit completo ya está adentro cuando lo necesites.")
+add("walk_lbl", "How to say the walk — English or Spanish", "Cómo decir la caminata — inglés o español")
+add("proc_ai_k", "Optional AI", "IA opcional")
+add("proc_ai_h", "The whole program works without it.", "Todo el programa funciona sin ella.")
+add("proc_ai_lede", "Connect ChatGPT, Claude, Grok, local Ollama, or any OpenAI-compatible endpoint only if you want invoice photos and PDFs read. Your key stays in data/config.json on this computer and is left out of backups. Skip it now, add it later in Settings, or never touch it.",
+    "Conecta ChatGPT, Claude, Grok, Ollama local o cualquier endpoint compatible solo si quieres que lea fotos y PDFs. Tu clave queda en data/config.json en esta computadora y no entra a los backups. Sáltala ahora, agrégala después en Ajustes, o nunca la toques.")
+add("proc_count_k", "Count", "Conteo")
+add("proc_count_h", "Daily, weekly, monthly", "Diario, semanal, mensual")
+add("proc_count_p", "Daily end-of-shift is a partial watch list. Weekly is the full truck. Monthly adds an extras checklist. Partials never zero what they skip.",
+    "El diario de fin de turno es una lista parcial. El semanal es el truck completo. El mensual suma extras. Los parciales nunca ponen en cero lo que se saltan.")
+add("proc_add_k", "Add", "Agregar")
+add("proc_add_h", "POS, invoices, notes", "POS, facturas, notas")
+add("proc_add_p", "Bring in sales, delivery notes, and manager context for the same period. Barcode and receiving built in. Optional invoice photos if you connect AI.",
+    "Trae ventas, notas de entrega y contexto del manager del mismo período. Código de barras y recepción incluidos. Fotos de factura opcionales si conectas IA.")
+add("proc_read_k", "Read", "Leer")
+add("proc_read_h", "Home base story", "La historia de Home base")
+add("proc_read_p", "Usage, spend, variance, food cost %, what to buy grouped by vendor, tomorrow’s load list.",
+    "Uso, gasto, merma, % de food cost, qué comprar por proveedor, lista de carga de mañana.")
+add("cta_lot_play", "Play in The Lot", "Jugar en The Lot")
+
+# Process steps
+add("s01_h", "Install It and Bookmark It", "Instálalo y guárdalo")
+add("s01_p", "Download the package and unzip it. Run the installer (Install.command on Mac, Install.bat on Windows, or python server.py). It opens one browser window at http://127.0.0.1:5053/. Bookmark that window — that bookmark is the software. Everything you build lives inside that one page.",
+    "Descarga el paquete y descomprímelo. Corre el instalador (Install.command en Mac, Install.bat en Windows, o python server.py). Abre una ventana en http://127.0.0.1:5053/. Guarda esa página — ese favorito es el software. Todo lo que armes vive en esa página.")
+add("s01_n", "One install, one bookmark. Come back to the same place every night. Want to count from a phone? Start it with --lan on the truck’s Wi-Fi and open the address it prints.",
+    "Una instalación, un favorito. Vuelve al mismo lugar cada noche. ¿Contar desde el teléfono? Arráncalo con --lan en el Wi-Fi del truck y abre la dirección que imprime.")
+add("s02_h", "Meet the Guided Walkthrough", "Conoce el recorrido guiado")
+add("s02_p", "The first time it opens, you land on the guided walkthrough — the caterpillar. Welcome, optional AI (off by default), or “Load sample taco truck” if you just want to look around. No account, no cloud, no AI required. It walks you through mapping the whole truck one calm step at a time.",
+    "La primera vez caes en el recorrido guiado — la oruga. Bienvenida, IA opcional (apagada), o “Cargar taco truck de muestra” si solo quieres mirar. Sin cuenta, sin nube, sin IA. Te lleva a mapear el truck entero, un paso calmado a la vez.")
+add("s02_n", "This is the caterpillar stage: patient, offline, focused on getting your truck understood. Later it becomes the butterfly — Home base with the full industrial toolkit.",
+    "Esta es la etapa oruga: paciente, sin red, centrada en entender tu truck. Después es la mariposa — Home base con el toolkit industrial.")
+add("s03_h", "Name Your Truck", "Nombra tu truck")
+add("s03_p", "Step 1 is Your truck: the name on the wrap, weekly / every two weeks / monthly cycle, units. If you run more than one truck later, you add them in Settings. For the first build you name this one plainly.",
+    "El paso 1 es Tu truck: el nombre del wrap, ciclo semanal / quincenal / mensual, unidades. Si luego tienes más trucks, los agregas en Ajustes. En el primer armado nombra este con claridad.")
+add("s03_n", "The name shows on Home base and on printed load lists. You can rename it anytime.",
+    "El nombre sale en Home base y en las listas de carga. Lo puedes cambiar cuando quieras.")
+add("s04_h", "Lay Out the Sections", "Arma las secciones")
+add("s04_p", "Name the physical places you walk: cooler, freezer, dry, prep — plus extras you turn on (window, commissary, outside, line / make table, lowboy, cab). Two coolers in the truck means two sections in the system. This is the frame you pour everything else into.",
+    "Nombra los lugares físicos: nevera, congelador, seco, prep — más extras que actives (ventana, commissary, afuera, línea / make table, lowboy, cabina). Dos neveras en el truck son dos secciones. Este es el marco donde cae todo lo demás.")
+add("s04_n", "Count the rooms in the rolling kitchen, then name them. Real shelf names come after the first map.",
+    "Cuenta los cuartos de la cocina que rueda, luego nómbralos. Los nombres reales de anaquel vienen después del primer mapa.")
+add("s05_h", "Walk Each Section and Say It Out Loud", "Camina cada sección y dilo en voz alta")
+add("s05_p", "Stand in the truck and vocalize it the way you already walk it. Go section by section, shelf by shelf — say the location, then name what’s in it. Move the same route every time so the map matches the real box. Speak English, Spanish, or mix them. Typing always works if the generator is too loud for a mic.",
+    "Párate en el truck y vocalízalo como ya lo caminas. Sección por sección, anaquel por anaquel — di el lugar, luego lo que hay. La misma ruta siempre para que el mapa coincida. Habla inglés, español, o mézclalos. Escribir siempre funciona si el generador tapa el mic.")
+add("s05_n", "This first voice note is the seed. Everything the program builds grows out of this walk, so speak it in order.",
+    "Esta primera nota de voz es la semilla. Todo lo que arma el programa crece de esta caminata, así que dilo en orden.")
+add("s06_h", "Bring the Invoices", "Trae las facturas")
+add("s06_p", "The walk also takes product invoices — PDF, photos, CSV, or typed lines. You do not have to finish invoices to continue; they merge with what you said on the next step. Photos of invoices need optional AI if you want them read; CSV and typed lines work locally.",
+    "La caminata también toma facturas — PDF, fotos, CSV o líneas escritas. No tienes que terminar facturas para seguir; se mezclan con lo que dijiste en el siguiente paso. Las fotos necesitan IA opcional; CSV y texto funcionan en local.")
+add("s06_n", "Invoice quantities in setup are not added to stock. The walk count is what’s on the truck. Receiving still happens later in All inputs.",
+    "Las cantidades de factura en el setup no se suman al stock. El conteo de la caminata es lo que hay en el truck. La recepción sigue después en Todas las entradas.")
+add("s07_h", "Reconcile — Spoken × Invoices", "Cuadrar — hablado × facturas")
+add("s07_p", "Step 4 shows “Here’s what I registered” per section. Tap any row to edit name, section, count, unit, pack, cost, vendor. Merge, link or unlink an invoice line, add a missing product, or park something as commissary-only / not stocked / skip. Nothing saves until Confirm & continue.",
+    "El paso 4 muestra “Esto es lo que registré” por sección. Toca cualquier fila para editar nombre, sección, conteo, unidad, empaque, costo, proveedor. Fusiona, vincula o desvincula una línea de factura, agrega un producto faltante, o márcalo commissary / no stock / saltar. Nada se guarda hasta Confirmar y continuar.")
+add("s07_n", "The program does the heavy lifting. The operator approves the truth.",
+    "El programa hace el trabajo pesado. El operador aprueba la verdad.")
+add("s08_h", "Review the First Map, Then Count", "Revisa el primer mapa, luego cuenta")
+add("s08_p", "Approve the map: rename, move, set PAR. Then the first live count, section by section — voice fills the numbers, you save. After that, Home base opens as the butterfly: metrics, jump-to cards, low-PAR alerts.",
+    "Aprueba el mapa: renombra, mueve, pon PAR. Luego el primer conteo en vivo, sección por sección — la voz llena los números, tú guardas. Después Home base abre como mariposa: métricas, tarjetas, alertas de PAR bajo.")
+add("s08_n", "Printable count sheets and the on-phone stepper follow the same walking order you spoke the first time.",
+    "Las hojas imprimibles y el stepper del teléfono siguen el mismo orden que hablaste la primera vez.")
+add("s09_h", "Lock It — Optional PIN", "Ciérralo — PIN opcional")
+add("s09_p", "Create an owner PIN if you want, or leave it open. People & access (admin / manager / crew, per-permission, truck lock) stay available in Settings. Crew can be limited to daily end-of-shift counts.",
+    "Crea un PIN de dueño si quieres, o déjalo abierto. Personas y acceso (admin / manager / cuadrilla) siguen en Ajustes. La cuadrilla puede limitarse a conteos diarios de fin de turno.")
+add("s09_n", "Open until you create the first admin. Same pattern as Open Source Barware.",
+    "Abierto hasta que crees el primer admin. El mismo patrón que Open Source Barware.")
+add("s10_h", "You Have Full Control — and It's Open Source", "Tienes control total — y es código abierto")
+add("s10_p", "Inside Home base: inventory sheets, reports, on the truck, all inputs, menu & costing, stops & load lists, settings. Daily / weekly / monthly count types. Multiple trucks and transfers. Backups, restore, reset. Because it is open source, nothing is locked away.",
+    "Dentro de Home base: hojas, reportes, en el truck, entradas, menú y costeo, paradas y listas, ajustes. Tipos de conteo diario / semanal / mensual. Varios trucks y transferencias. Backups, restaurar, reset. Como es código abierto, nada queda encerrado.")
+add("s10_n", "Change the sections, restructure the layout, own the whole thing. Complete access, no lock-in.",
+    "Cambia las secciones, reestructura el layout, dueño de todo. Acceso completo, sin candado.")
+
+# About
+add("about_kicker", "The Truck Stop", "The Truck Stop")
+add("about_h1", "Built on the asphalt.", "Hecho en el asfalto.")
+add("about_lede", "Same kitchen that made Open Source Barware. This one just has a parking brake. No founder-chef myth. Operators, a generator, and a program that stays free.",
+    "La misma cocina que hizo Open Source Barware. Esta trae freno de mano. Sin mito de chef fundador. Operadores, un generador, y un programa que se queda gratis.")
+add("about_p1", "Open Source Food Truckin' exists because the bar program could not pretend a rolling kitchen is a back bar with wheels. Coolers thaw. Festivals change the PAR. The POS is a tablet on the window ledge. The count happens between service and the drive back to the commissary.",
+    "Open Source Food Truckin' existe porque el programa de bar no podía fingir que una cocina que rueda es una trastienda con ruedas. Las neveras se descongelan. Los festivales cambian el PAR. El POS es una tablet en la ventana. El conteo ocurre entre el servicio y el viaje al commissary.")
+add("about_p2", "We built the sister program in the same house: local-first, GPLv3, English and Spanish, no account, no subscription. Version 1.3-beta is the public toolkit — voice walk, invoice reconcile, daily/weekly/monthly counts, Square/Toast/Clover CSV, plate costing, stop types, load lists, multi-truck, crew PINs.",
+    "Construimos el programa hermano en la misma casa: local-first, GPLv3, inglés y español, sin cuenta, sin suscripción. La versión 1.3-beta es el toolkit público — caminata de voz, cuadrar facturas, conteos diario/semanal/mensual, CSV de Square/Toast/Clover, costeo de plato, tipos de parada, listas de carga, varios trucks, PINs.")
+add("about_p3", 'Find Food Truckin\' next to the bar tools at <a href="https://opensourcebarware.com/">OpenSourceBarware.com</a>. The family also includes <a href="https://intelligenthospitalitysystems.com/">Intelligent Hospitality Systems</a> and <a href="https://www.reservationrelief.com/">Reservation Relief</a>.',
+    'Encuentra Food Truckin\' junto a las herramientas de bar en <a href="https://opensourcebarware.com/">OpenSourceBarware.com</a>. La familia también incluye <a href="https://intelligenthospitalitysystems.com/">Intelligent Hospitality Systems</a> y <a href="https://www.reservationrelief.com/">Reservation Relief</a>.')
+add("about_p4", "A Richard B. Jamison project. Free forever.",
+    "Un proyecto de Richard B. Jamison. Gratis para siempre.")
+
+# Resources
+add("res_kicker", "The Community", "La comunidad")
+add("res_h1", "People first.<br>Program second.", "Primero la gente.<br>El programa después.")
+add("res_lede", "The organizations, educators, and support networks that make this industry worth fighting for. All free. All worth your time.",
+    "Las organizaciones, educadores y redes que hacen que esta industria valga la pelea. Todo gratis. Todo vale tu tiempo.")
+add("res_org_k", "Industry Organizations", "Organizaciones del oficio")
+add("res_org_h", "Your guild. Your people.", "Tu gremio. Tu gente.")
+add("res_org_lede", "National and local groups advocating for mobile vendors, providing education, and building the professional network you deserve.",
+    "Grupos nacionales y locales que defienden a vendedores móviles, educan y arman la red profesional que mereces.")
+add("res_tag", "Community", "Comunidad")
+add("res_c1", "Association of food truck associations. Law, location, event management, and operator tutorials — the connective tissue between vendors and regional groups.",
+    "Asociación de asociaciones de food trucks. Ley, ubicación, eventos y tutoriales — el tejido entre vendedores y grupos regionales.")
+add("res_c2", "National Association for Street Food Vendors. Mentorship, live classes, and a community built for trucks, trailers, carts, and tents.",
+    "Asociación nacional de vendedores de comida callejera. Mentoría, clases en vivo y comunidad para trucks, trailers, carritos y toldos.")
+add("res_c3", "Bay Area street-food markets and creator support. Weekly lots, catering, and a bench of operators who already live this schedule.",
+    "Mercados de street food en Bay Area y apoyo a creadores. Lotes semanales, catering y una banca de operadores que ya viven este horario.")
+add("res_c4", "Advocacy for street vendors. Policy, legal support, and a reminder that the lot is a workplace.",
+    "Defensa de vendedores callejeros. Política, apoyo legal, y el recordatorio de que el lote es un lugar de trabajo.")
+add("res_c5", "Advocacy and crisis relief for restaurant and hospitality workers — including the people on the line in a truck.",
+    "Defensa y alivio de crisis para trabajadores de restaurantes y hospitalidad — incluida la gente en la línea de un truck.")
+add("res_c6", "Food-handler and manager certification most health departments expect. Learn it once, carry it every stop.",
+    "Certificación de manejador y manager que la mayoría de salud exige. Apréndela una vez, llévala a cada parada.")
+add("res_c7", "Free mentoring for small businesses. Useful when the truck is also the corporation.",
+    "Mentoría gratis para pequeños negocios. Útil cuando el truck también es la corporación.")
+add("res_c8", "Sister program. Free bar inventory from the same house — voice walk, variance, POS, no subscription.",
+    "Programa hermano. Inventario de bar gratis de la misma casa — caminata de voz, merma, POS, sin suscripción.")
+add("res_in_k", "Inside this program", "Dentro de este programa")
+add("res_in_h", "Learn without paying.", "Aprende sin pagar.")
+add("res_in1", "Install → walk → reconcile → home base. The kitchen-table version of the whole system.",
+    "Instalar → caminar → cuadrar → home base. La versión de mesa de cocina de todo el sistema.")
+add("res_in2", "What each instrument is, what it looks like, and how it fits the weekly rhythm.",
+    "Qué es cada instrumento, cómo se ve, y cómo encaja en el ritmo semanal.")
+add("res_in3", "Spreadsheets, POS files, load lists, food cost — practical writing, no upsell.",
+    "Hojas, archivos POS, listas de carga, food cost — escritura práctica, sin upsell.")
+
+# Download
+add("dl_kicker", "Free program", "Programa gratis")
+add("dl_h1", "Download<br>the free program.", "Descarga<br>el programa gratis.")
+add("dl_lede", "Free, local food-truck inventory on your laptop. No subscription. No cloud tax. Version 1.3-beta is live — voice walk, Spanish, POS, plate costing, load lists, and the full toolkit.",
+    "Inventario local de food truck en tu laptop. Sin suscripción. Sin impuesto de nube. La versión 1.3-beta está viva — caminata de voz, español, POS, costeo, listas de carga y el toolkit completo.")
+add("dl_t1", "v1.3-beta live", "v1.3-beta en vivo")
+add("dl_t2", "GPLv3 · free forever", "GPLv3 · gratis para siempre")
+add("dl_t4", "Local-first · no account to run", "Local-first · sin cuenta para correr")
+add("dl_t5", "Release notes", "Notas de versión")
+add("dl_t6", "Skip to installer ↓", "Ir al instalador ↓")
+add("dl_btn", "Download OSFT v1.3-beta", "Descargar OSFT v1.3-beta")
+add("dl_try", "Try it in The Lot first", "Pruébalo primero en The Lot")
+add("dl_guide_ask", "Want to understand what’s inside before you install?",
+    "¿Quieres entender qué hay adentro antes de instalar?")
+
+# Program guide
+add("guide_kicker", "Program Guide", "Guía del programa")
+add("guide_h1", "How each instrument fits.", "Cómo encaja cada instrumento.")
+add("guide_lede", "Learn how each Open Source Food Truckin' feature lives inside the local program — the same teaching format as Open Source Barware’s program guide.",
+    "Aprende cómo cada función de Open Source Food Truckin' vive en el programa local — el mismo formato de enseñanza que la guía de Open Source Barware.")
+add("looks", "Looks like", "Se ve así")
+add("process_lbl", "Process", "Proceso")
+add("g01_fmt", "01 · Count · variance · order list · product master", "01 · Conteo · merma · pedido · maestro")
+add("g01_h", "Inventory sheets", "Hojas de inventario")
+add("g01_p1", "The workbook view for every product, zone, PAR, pack, vendor, and Spanish name.",
+    "La vista de libro para cada producto, zona, PAR, empaque, proveedor y nombre en español.")
+add("g01_p2", "Inside the program this is Inventory sheets. Setup builds the first version from the approved truck map, then each cycle updates it with counts, invoices, and POS exports.",
+    "Dentro del programa esto es Hojas de inventario. El setup arma la primera versión del mapa aprobado, y cada ciclo la actualiza con conteos, facturas y POS.")
+add("g01_l1", "Tabs: Count sheet, Variance, Order list, Product master", "Pestañas: Conteo, Merma, Pedido, Maestro")
+add("g01_l2", "Rows by physical section: cooler, freezer, dry, prep, window, commissary", "Filas por sección: nevera, congelador, seco, prep, ventana, commissary")
+add("g01_l3", "Columns for product, unit, pack, PAR, opening, purchases, closing, cost, variance", "Columnas de producto, unidad, empaque, PAR, apertura, compras, cierre, costo, merma")
+add("g01_pr1", "Walk the truck by voice during setup.", "Camina el truck con voz en el setup.")
+add("g01_pr2", "The system turns that walk into the first map.", "El sistema convierte esa caminata en el primer mapa.")
+add("g01_pr3", "After you audit and approve it, the sheets become the weekly source of truth.", "Cuando lo auditas y apruebas, las hojas son la verdad semanal.")
+add("g02_fmt", "02 · Daily · weekly · monthly", "02 · Diario · semanal · mensual")
+add("g02_h", "Count types", "Tipos de conteo")
+add("g02_p1", "Daily end-of-shift is a partial watch list. Weekly is the full truck. Monthly adds an extras checklist.",
+    "El diario de fin de turno es una lista parcial. El semanal es el truck completo. El mensual suma extras.")
+add("g02_p2", "You pick the type and business date when you start a count. Crew logins can be limited to daily. A partial count only updates what it covers — everything else keeps its last count.",
+    "Eliges el tipo y la fecha de negocio al empezar. La cuadrilla puede limitarse al diario. Un parcial solo actualiza lo que cubre — lo demás guarda su último conteo.")
+add("g02_l1", "Watch list by section, category, or picked products", "Lista por sección, categoría o productos elegidos")
+add("g02_l2", "History shows type, scope, and who counted", "El historial muestra tipo, alcance y quién contó")
+add("g02_l3", "Weekly sales variance skips partials on purpose", "La merma semanal se salta los parciales a propósito")
+add("g02_pr1", "Set count types in Settings.", "Pon los tipos de conteo en Ajustes.")
+add("g02_pr2", "Start a count, walk the scope, complete it.", "Empieza un conteo, camina el alcance, termínalo.")
+add("g02_pr3", "Read variance on the matching window.", "Lee la merma en la ventana que corresponde.")
+add("g03_fmt", "03 · Mic or type · big −/+ steppers", "03 · Mic o teclado · steppers grandes −/+")
+add("g03_h", "Voice walk & count sheet", "Caminata de voz y hoja de conteo")
+add("g03_p1", "Speak the shelf in English or Spanish, check what it heard, save. On the phone, the count sheet is large taps, one-hand friendly.",
+    "Habla el anaquel en inglés o español, revisa lo que escuchó, guarda. En el teléfono la hoja es de toques grandes, una mano.")
+add("g03_p2", "The parser lives on your laptop. Firefox has no speech recognition — the typed box always works. Barcode scan needs Chrome.",
+    "El parser vive en tu laptop. Firefox no tiene reconocimiento de voz — la caja de texto siempre funciona. El código de barras necesita Chrome.")
+add("g03_l1", "How-to-speak examples on the walk screen", "Ejemplos de cómo hablar en la pantalla de caminata")
+add("g03_l2", "Matched / which one? / not found review", "Revisión: coincidió / ¿cuál? / no encontrado")
+add("g03_l3", "Sticky Start / Complete bar on phones", "Barra fija Empezar / Completar en teléfonos")
+add("g03_pr1", "Walk each section in order.", "Camina cada sección en orden.")
+add("g03_pr2", "Confirm heard lines.", "Confirma las líneas escuchadas.")
+add("g03_pr3", "Save; jump to variance.", "Guarda; salta a merma.")
+add("g04_fmt", "04 · Square · Toast · Clover · any CSV", "04 · Square · Toast · Clover · cualquier CSV")
+add("g04_h", "POS sales import", "Importar ventas POS")
+add("g04_p1", "Upload a sales export. Format auto-detect, preview, then import. Generic column mapping for everything else.",
+    "Sube un export de ventas. Auto-detecta formato, previsualiza, importa. Mapeo genérico de columnas para lo demás.")
+add("g04_p2", "Live POS APIs are documented stubs only. CSV column names come from public vendor docs and should be tested against your real file. Variance uses date-only matching.",
+    "Las APIs en vivo son stubs documentados. Los nombres de columna salen de docs públicos y hay que probarlos con tu archivo real. La merma usa solo fechas.")
+add("g04_l1", "Preview before import", "Previsualiza antes de importar")
+add("g04_l2", "Voids skipped on Toast where documented", "Anulaciones de Toast se saltan donde está documentado")
+add("g04_l3", "Clover exports with no dates: pick the sales date on import", "Exports de Clover sin fechas: elige la fecha al importar")
+add("g04_pr1", "Export item sales from the POS.", "Exporta ventas por ítem del POS.")
+add("g04_pr2", "Preview the mapping.", "Previsualiza el mapeo.")
+add("g04_pr3", "Import; theoretical usage = qty sold × recipe qty.", "Importa; uso teórico = cantidad vendida × cantidad de receta.")
+add("g05_fmt", "05 · Typed · CSV · PDF · photo", "05 · Escrito · CSV · PDF · foto")
+add("g05_h", "Invoices, receiving, optional photos", "Facturas, recepción, fotos opcionales")
+add("g05_p1", "Log deliveries, match products, update cost. Snap invoice photos. Optional AI reading uses your own key and is off by default.",
+    "Registra entregas, empareja productos, actualiza costo. Fotos de factura. La lectura con IA usa tu clave y viene apagada.")
+add("g05_p2", "This is the only place AI ever enters the program. Skip it and type or paste — the local parser handles that on its own.",
+    "Este es el único lugar donde entra IA. Sáltala y escribe o pega — el parser local lo hace solo.")
+add("g05_l1", "Photo button labeled as needing AI", "Botón de foto marcado como que necesita IA")
+add("g05_l2", "Type-or-paste sitting beside it as the default", "Escribir o pegar al lado, como default")
+add("g05_l3", "Confirm line items before they touch the numbers", "Confirma las líneas antes de que toquen los números")
+add("g05_pr1", "Optional: add your own AI key in Settings.", "Opcional: agrega tu clave de IA en Ajustes.")
+add("g05_pr2", "Snap the Sysco / US Foods / local produce invoice.", "Fotografía la factura de Sysco / US Foods / el productor local.")
+add("g05_pr3", "Confirm; without a key, type or paste.", "Confirma; sin clave, escribe o pega.")
+add("g06_fmt", "06 · Plate cost · PAR per stop · print tomorrow", "06 · Costo de plato · PAR por parada · imprime mañana")
+add("g06_h", "Menu, stops, load lists", "Menú, paradas, listas de carga")
+add("g06_p1", "Cost every plate. Set pars for lunch lots, breweries, festivals. Print a load list before you roll.",
+    "Costea cada plato. Pon pars para lotes de almuerzo, cervecerías, festivales. Imprime la lista de carga antes de rodar.")
+add("g06_p2", "Recipe qty must be in the product’s own unit (e.g. 0.04 pack of tortillas per taco). No unit conversion yet. Load list assumes on-hand is what’s on the truck.",
+    "La cantidad de receta debe estar en la unidad del producto (ej. 0.04 paquete de tortillas por taco). Aún no hay conversión de unidades. La lista asume que el on-hand es lo que hay en el truck.")
+add("g06_l1", "Food-cost % and margin per menu item", "% de food cost y margen por ítem")
+add("g06_l2", "Stop types with their own PAR", "Tipos de parada con su propio PAR")
+add("g06_l3", "Printable load list grouped for the next stop", "Lista de carga imprimible agrupada para la siguiente parada")
+add("g06_pr1", "Build recipes from the catalog.", "Arma recetas desde el catálogo.")
+add("g06_pr2", "Name the stop types you actually work.", "Nombra los tipos de parada que realmente trabajas.")
+add("g06_pr3", "Print the list the night before.", "Imprime la lista la noche anterior.")
+
+# Manifesto
+add("man_k", "The Manifesto", "El manifiesto")
+add("man_h1", "Counting the cooler shouldn’t<br>cost you a festival’s tips.",
+    "Contar la nevera no debería<br>costarte las propinas de un festival.")
+add("man_lede", "This is the honest version of why Open Source Food Truckin' exists, who it’s for, and why the whole program — cooler, freezer, prep, and load list included — is free and stays free.",
+    "Esta es la versión honesta de por qué existe Open Source Food Truckin', para quién es, y por qué todo el programa — nevera, congelador, prep y lista de carga — es gratis y se queda gratis.")
+add("man_bill_k", "The Bill Nobody Talks About", "La cuenta de la que nadie habla")
+add("man_bill_h", "Inventory has been a paid problem for decades.", "El inventario ha sido un problema de pago por décadas.")
+add("man_bill_lede", "Somewhere along the way, an industry decided that counting your own product was worth charging you for. Trucks inherited restaurant invoices.",
+    "En algún momento la industria decidió que contar tu propio producto valía cobrarte. Los trucks heredaron las facturas de restaurante.")
+add("man_plat_k", "The Platform", "La plataforma")
+add("man_plat_p", "Restaurant inventory SaaS (MarketMan Starter published around $249/mo in 2026) built for four walls, billed every month, forever.",
+    "SaaS de inventario de restaurante (MarketMan Starter publicado ~$249/mes en 2026) para cuatro paredes, cobrado cada mes, para siempre.")
+add("man_pos_k", "The POS add-on", "El extra del POS")
+add("man_pos_amt", "Quote", "Cotización")
+add("man_pos_p", "Toast / xtraCHEF-class invoice tools that want your POS first and a sales call second. Trucks already pay for the tablet.",
+    "Herramientas tipo Toast / xtraCHEF que quieren tu POS primero y una llamada de ventas después. Los trucks ya pagan la tablet.")
+add("man_sheet_k", "The Spreadsheet", "La hoja de cálculo")
+add("man_sheet_amt", "$0, until it isn’t", "$0, hasta que deja de serlo")
+add("man_sheet_p", "A sheet that worked for twelve SKUs and broke the week you added a second stop type.",
+    "Una hoja que funcionó con doce SKUs y se rompió la semana que agregaste un segundo tipo de parada.")
+add("man_keep_h", "Promises we actually keep", "Promesas que sí cumplimos")
+add("man_li1", "No investors to answer to, so no pressure to add a paywall later.",
+    "Sin inversionistas a quienes rendir cuentas, así que no hay presión de poner un paywall después.")
+add("man_li3", "No seat limits, no location tax, no “upgrade to Pro” hiding a count type you already need.",
+    "Sin límite de asientos, sin impuesto por local, sin “upgrade a Pro” escondiendo un tipo de conteo que ya necesitas.")
+add("man_li4", "Open source, so if we ever drifted from this, anyone could see it in the code and fork it.",
+    "Código abierto, así que si alguna vez nos desviamos, cualquiera lo ve en el código y puede hacer fork.")
+add("man_close", "A Richard B. Jamison project. Sister to Open Source Barware. Free forever.",
+    "Un proyecto de Richard B. Jamison. Hermano de Open Source Barware. Gratis para siempre.")
+
+# Changelog
+add("ch_k", "Changelog", "Changelog")
+add("ch_h1", '<span style="color:var(--gold)">v1.3-beta</span> public toolkit',
+    '<span style="color:var(--gold)">v1.3-beta</span> toolkit público')
+add("ch_p", "Released October 24, 2026 · Version 1.3.0-beta · GPL-3.0-or-later · Free forever. Local-first Python program on Mac, Windows, and Linux — no subscription, no cloud account required.",
+    "Publicado 24 de octubre 2026 · Versión 1.3.0-beta · GPL-3.0-or-later · Gratis para siempre. Programa Python local-first en Mac, Windows y Linux — sin suscripción, sin cuenta en la nube.")
+add("ch_h2", "Count types", "Tipos de conteo")
+add("ch_c1", "Daily end-of-shift: partial watch list (sections, categories, or picked products)",
+    "Diario de fin de turno: lista parcial (secciones, categorías o productos elegidos)")
+add("ch_c2", "Weekly: the full truck", "Semanal: el truck completo")
+add("ch_c3", "Monthly in-depth: full truck plus extras checklist", "Mensual a fondo: truck completo más extras")
+add("ch_c4", "Partials never zero what they skip; weekly sales variance skips them",
+    "Los parciales nunca ponen en cero lo que se saltan; la merma semanal los ignora")
+add("ch_h3", "Reconcile edits", "Ediciones al cuadrar")
+add("ch_r1", "On setup step 4, tap any row: name, section, count, unit, pack, cost, vendor, delete, merge, link/unlink invoice line, add a missing product",
+    "En el paso 4 del setup, toca cualquier fila: nombre, sección, conteo, unidad, empaque, costo, proveedor, borrar, fusionar, vincular/desvincular factura, agregar producto")
+add("ch_r2", "Nothing saves until Confirm & continue", "Nada se guarda hasta Confirmar y continuar")
+add("ch_h4", "From v1.2 / v1.1 / v1.0", "Desde v1.2 / v1.1 / v1.0")
+add("ch_v1", "Voice walk in English or Spanish; invoices into setup; “Here’s what I registered”",
+    "Caminata de voz en inglés o español; facturas en el setup; “Esto es lo que registré”")
+add("ch_v2", "People & PIN logins, 380-product starter list, POs by vendor, multi-truck, crew board",
+    "Personas y PINs, lista inicial de 380 productos, POs por proveedor, varios trucks, tablero de cuadrilla")
+add("ch_v3", "POS CSV (Square / Toast / Clover / generic), menu costing, stop types, load lists",
+    "CSV de POS (Square / Toast / Clover / genérico), costeo de menú, tipos de parada, listas de carga")
+add("ch_v4", "OSB-style sidebar: Home base · Inventory sheets · Reports · On the truck · All inputs · Menu · Stops · Settings",
+    "Barra estilo OSB: Home base · Hojas · Reportes · En el truck · Entradas · Menú · Paradas · Ajustes")
+add("ch_full", "Full notes live in the download as CHANGELOG.md and PARITY.md.",
+    "Las notas completas viven en la descarga como CHANGELOG.md y PARITY.md.")
+
+# Lot
+add("lot_k", "The Lot · Live Demo", "The Lot · Demo en vivo")
+add("lot_p", "Playable sample taco truck — same program as the download. Click around Home base, count sheet, POS, menu, load lists. This is a sandbox on this computer, not your truck. Download to run it for real.",
+    "Taco truck de muestra jugable — el mismo programa de la descarga. Recorre Home base, hoja de conteo, POS, menú, listas. Es un sandbox en esta computadora, no tu truck. Descarga para usarlo de verdad.")
+add("lot_open", "Open The Lot in its own window", "Abrir The Lot en su propia ventana")
+add("lot_h1", "Play in the sample taco truck.", "Juega en el taco truck de muestra.")
+add("lot_enter_p", "Same home base as the download — metrics, sheets, and load lists after you look around.",
+    "El mismo home base de la descarga — métricas, hojas y listas de carga cuando termines de mirar.")
+add("lot_enter", "Enter The Lot", "Entrar a The Lot")
+
+# Compliance
+add("gpl_k", "GPL Compliance", "Cumplimiento GPL")
+add("gpl_h1", "Open source means the source stays with the download.",
+    "Código abierto significa que el código va con la descarga.")
+add("gpl_li2", "The corresponding source is the same archive, at no charge.",
+    "El código correspondiente es el mismo archivo, sin cargo.")
+add("gpl_li3", "Modified redistributions should keep license notices intact and mark meaningful changes with a date.",
+    "Las redistribuciones modificadas deben conservar avisos de licencia y marcar cambios con fecha.")
+add("gpl_li4", "Running a hosted website by itself does not require users to distribute private changes; conveying downloadable copies does.",
+    "Correr un sitio hospedado por sí solo no obliga a distribuir cambios privados; transmitir copias descargables sí.")
+
+# Compare
+add("cmp_k", "Compared", "Comparado")
+add("cmp_h1", "MarketMan vs xtraCHEF vs a spreadsheet vs this.",
+    "MarketMan vs xtraCHEF vs una hoja vs esto.")
+add("cmp_lede", "Honest comparison on cost, data ownership, POS, and lock-in. MarketMan publishes a price. xtraCHEF quotes. Spreadsheets are free until they aren’t. This program is GPLv3.",
+    "Comparación honesta de costo, dueño de los datos, POS y candado. MarketMan publica precio. xtraCHEF cotiza. Las hojas son gratis hasta que dejan de serlo. Este programa es GPLv3.")
+add("cmp_th1", "Program", "Programa")
+add("cmp_th2", "Cost", "Costo")
+add("cmp_th3", "Data", "Datos")
+add("cmp_th4", "POS", "POS")
+add("cmp_th5", "Variance", "Merma")
+add("cmp_th6", "Multi-truck", "Varios trucks")
+add("cmp_th7", "Offline", "Sin red")
+add("cmp_th8", "Lock-in", "Candado")
+add("cmp_osft_cost", "Free (GPLv3)", "Gratis (GPLv3)")
+add("cmp_osft_data", "Local files you control", "Archivos locales que controlas")
+add("cmp_osft_pos", "CSV: Square / Toast / Clover / generic", "CSV: Square / Toast / Clover / genérico")
+add("cmp_osft_var", "Sales vs counts, food cost %", "Ventas vs conteos, % food cost")
+add("cmp_osft_multi", "Multiple trucks + transfers", "Varios trucks + transferencias")
+add("cmp_osft_off", "Yes — runs on your machines", "Sí — corre en tus máquinas")
+add("cmp_osft_lock", "None — open source", "Ninguno — código abierto")
+add("cmp_mm_cost", "Paid SaaS — Starter published ~$249/mo (2026)", "SaaS de pago — Starter publicado ~$249/mes (2026)")
+add("cmp_mm_data", "Vendor cloud", "Nube del vendedor")
+add("cmp_mm_pos", "Cloud integrations", "Integraciones en la nube")
+add("cmp_mm_var", "Restaurant inventory + purchasing", "Inventario de restaurante + compras")
+add("cmp_mm_multi", "Cloud multi-location", "Multi-local en la nube")
+add("cmp_mm_off", "Cloud-first", "Primero la nube")
+add("cmp_mm_lock", "Account + vendor cloud", "Cuenta + nube del vendedor")
+add("cmp_xc_cost", "Quote — no public price", "Cotización — sin precio público")
+add("cmp_xc_pos", "Built around Toast", "Hecho alrededor de Toast")
+add("cmp_xc_var", "Invoice / back-office", "Facturas / back-office")
+add("cmp_xc_multi", "Plan-dependent", "Según el plan")
+add("cmp_xc_off", "Cloud", "Nube")
+add("cmp_xc_lock", "POS + subscription", "POS + suscripción")
+add("cmp_pos_cost", "Bundled with POS plans", "Incluido en planes de POS")
+add("cmp_pos_pos", "Native POS", "POS nativo")
+add("cmp_pos_var", "Item stock, not a truck walk", "Stock de ítem, no una caminata del truck")
+add("cmp_pos_multi", "POS locations", "Locales del POS")
+add("cmp_pos_off", "Needs the POS", "Necesita el POS")
+add("cmp_pos_lock", "POS account", "Cuenta del POS")
+add("cmp_sh_cost", "Free", "Gratis")
+add("cmp_sh_data", "Your file, until versions drift", "Tu archivo, hasta que las versiones se desvíen")
+add("cmp_sh_pos", "Manual paste", "Pegar a mano")
+add("cmp_sh_var", "Whatever you build", "Lo que armes")
+add("cmp_sh_multi", "Copy the file", "Copia el archivo")
+add("cmp_sh_off", "Yes", "Sí")
+add("cmp_sh_lock", "You, and whoever has the sheet", "Tú, y quien tenga la hoja")
+add("cmp_note", "MarketMan Starter/Growth/Enterprise figures as published on vendor pricing pages in 2026 (~$249 / $299 / from $449). xtraCHEF does not publish a current price. Confirm on the vendor site before you buy anything. This page is not a paid comparison.",
+    "Cifras de MarketMan Starter/Growth/Enterprise publicadas en 2026 (~$249 / $299 / desde $449). xtraCHEF no publica precio actual. Confirma en el sitio del vendedor antes de comprar. Esta página no es una comparación pagada.")
+
+# Category pages
+add("why_k", "Why this slice is different", "Por qué este corte es distinto")
+add("tracks_k", "What the program tracks", "Lo que el programa rastrea")
+add("cat_free_k", "Free software", "Software gratis")
+add("cat_free_h", "Free food truck inventory software.", "Software gratis de inventario para food trucks.")
+add("cat_free_lede", "The exact-match page for operators searching the phrase. Local-first, GPLv3, bilingual. The program is the product — this page is the door.",
+    "La página exacta para quien busca esa frase. Local-first, GPLv3, bilingüe. El programa es el producto — esta página es la puerta.")
+add("cat_free_w1_h", "No subscription", "Sin suscripción")
+add("cat_free_w1_p", "The download is the program. Nothing unlocks later behind a card.",
+    "La descarga es el programa. Nada se desbloquea después con una tarjeta.")
+add("cat_free_w2_h", "Built for wheels", "Hecho para ruedas")
+add("cat_free_w2_p", "Zones, stop types, and load lists — not a restaurant platform with the word truck taped on.",
+    "Zonas, tipos de parada y listas de carga — no una plataforma de restaurante con la palabra truck pegada.")
+add("cat_free_w3_h", "Same house as Barware", "La misma casa que Barware")
+add("cat_free_w3_p", "If you already trust Open Source Barware, this is the rolling-kitchen sister.",
+    "Si ya confías en Open Source Barware, esta es la hermana de la cocina que rueda.")
+add("cat_free_t1_h", "Voice + zones", "Voz + zonas")
+add("cat_free_t1_p", "Walk cooler, freezer, dry, prep. English or Spanish.",
+    "Camina nevera, congelador, seco, prep. Inglés o español.")
+add("cat_free_t2_h", "POS + recipes", "POS + recetas")
+add("cat_free_t2_p", "Square, Toast, Clover, or any CSV. Plate cost from the same catalog.",
+    "Square, Toast, Clover o cualquier CSV. Costo de plato del mismo catálogo.")
+add("cat_free_t3_h", "Count types", "Tipos de conteo")
+add("cat_free_t3_p", "Daily partial, weekly full, monthly in-depth.",
+    "Parcial diario, semanal completo, mensual a fondo.")
+add("cat_free_t4_h", "Load lists", "Listas de carga")
+add("cat_free_t4_p", "PAR per stop type. Print tomorrow before you roll.",
+    "PAR por tipo de parada. Imprime mañana antes de rodar.")
+add("cat_truck_k", "On the truck", "En el truck")
+add("cat_truck_h", "Truck and cooler inventory, the way you walk it.",
+    "Inventario del truck y nevera, como lo caminas.")
+add("cat_truck_lede", "Highest spoilage, highest panic. The rolling walk-in is the liquor room of this business — except it thaws.",
+    "La merma más alta, el pánico más alto. El walk-in que rueda es el cuarto de licores de este negocio — excepto que se descongela.")
+add("cat_truck_w1_h", "Highest spoilage", "La merma más alta")
+add("cat_truck_w1_p", "Dairy, meat, and ice cream do not wait for month-end.",
+    "Lácteos, carne y helado no esperan al cierre de mes.")
+add("cat_truck_w2_h", "Door on a parking lot", "Puerta a un estacionamiento")
+add("cat_truck_w2_p", "Every open cooler is a temperature story. Daily watch lists exist for this.",
+    "Cada nevera abierta es una historia de temperatura. Las listas diarias existen para esto.")
+add("cat_truck_w3_h", "FIFO in a box", "FIFO en una caja")
+add("cat_truck_w3_p", "Cases stacked for the next stop, not a pretty storeroom.",
+    "Cajas apiladas para la siguiente parada, no un almacén bonito.")
+add("cat_truck_t1_h", "Zone-level PAR", "PAR por zona")
+add("cat_truck_t1_p", "Cooler and freezer as places, not a category total.",
+    "Nevera y congelador como lugares, no un total de categoría.")
+add("cat_truck_t2_h", "Daily partial counts", "Conteos parciales diarios")
+add("cat_truck_t2_p", "Watch list of what dies overnight, without zeroing the rest.",
+    "Lista de lo que se muere en la noche, sin poner en cero el resto.")
+add("cat_truck_t3_h", "Variance vs tickets", "Merma vs tickets")
+add("cat_truck_t3_p", "Carne on the POS versus carne that left the freezer.",
+    "Carne en el POS versus carne que salió del congelador.")
+add("cat_truck_t4_h", "Load list", "Lista de carga")
+add("cat_truck_t4_p", "What to put on the truck for the next stop type.",
+    "Qué poner en el truck para el siguiente tipo de parada.")
+add("cat_prep_k", "Prep", "Prep")
+add("cat_prep_h", "Prep inventory is a different clock.", "El inventario de prep es otro reloj.")
+add("cat_prep_lede", "Pico does not live in the freezer. Dry goods do not thaw. The make table is a third physics.",
+    "El pico no vive en el congelador. El seco no se descongela. La make table es una tercera física.")
+add("cat_prep_w1_h", "Short shelf life", "Vida corta")
+add("cat_prep_w1_p", "Salsas, herbs, citrus — counted as prep, not as dry.",
+    "Salsas, hierbas, cítricos — se cuentan como prep, no como seco.")
+add("cat_prep_w2_h", "Recipe link", "Vínculo de receta")
+add("cat_prep_w2_p", "Prep is where plate costing becomes true or false.",
+    "Prep es donde el costeo de plato se vuelve verdad o mentira.")
+add("cat_prep_w3_h", "Window vs commissary", "Ventana vs commissary")
+add("cat_prep_w3_p", "What is on the line tonight versus what stays at the commissary.",
+    "Lo que está en la línea esta noche versus lo que se queda en el commissary.")
+add("cat_prep_t1_h", "Prep as a zone", "Prep como zona")
+add("cat_prep_t1_p", "First-class section, same walk as the cooler.",
+    "Sección de primera, la misma caminata que la nevera.")
+add("cat_prep_t2_h", "Recipes", "Recetas")
+add("cat_prep_t2_p", "Qty in the product’s own unit. Food-cost % from the same map.",
+    "Cantidad en la unidad del producto. % de food cost del mismo mapa.")
+add("cat_prep_t3_h", "Make table / window", "Make table / ventana")
+add("cat_prep_t3_p", "Optional extra zones for the line.", "Zonas extra opcionales para la línea.")
+add("cat_prep_t4_h", "Commissary", "Commissary")
+add("cat_prep_t4_p", "Park product as commissary-only at reconcile if it never rides.",
+    "Deja producto como solo-commissary al cuadrar si nunca viaja.")
+
+# Legal
+add("priv_k", "Privacy", "Privacidad")
+add("priv_h1", "Privacy Policy", "Política de privacidad")
+add("priv_p1", "Last updated October 24, 2026. Open Source Food Truckin' is built to keep your truck data on your own machine. This page explains the limited information the website itself handles.",
+    "Última actualización 24 de octubre 2026. Open Source Food Truckin' está hecho para dejar los datos de tu truck en tu máquina. Esta página explica la información limitada que maneja el sitio.")
+add("priv_p2", "The downloadable program runs on your own computer. Your counts, products, costs, and variance stay on your device unless you choose to share them. We do not receive that data. An optional AI key, if you add one, stays in data/config.json and is left out of backups.",
+    "El programa descargable corre en tu computadora. Conteos, productos, costos y merma se quedan en tu dispositivo a menos que tú los compartas. Nosotros no recibimos esos datos. Una clave de IA opcional, si la agregas, queda en data/config.json y no entra a backups.")
+add("priv_p3", "This local lab site may send anonymous journey events (page views, time on page, outbound clicks) to the Open Source Barware collector used across family sites, tagged siteId osft-landing. No account is created. No email is required to download.",
+    "Este lab local puede enviar eventos anónimos de recorrido (vistas, tiempo en página, clics de salida) al colector de Open Source Barware, con siteId osft-landing. No se crea cuenta. No se pide correo para descargar.")
+add("priv_p4", "To ask a privacy question, use the contact path on OpenSourceBarware.com or Intelligent Hospitality Systems.",
+    "Para una pregunta de privacidad, usa el contacto en OpenSourceBarware.com o Intelligent Hospitality Systems.")
+add("terms_k", "Terms", "Términos")
+add("terms_h1", "Terms of Use", "Términos de uso")
+add("terms_p1", "Last updated October 24, 2026. The program is licensed under the GNU GPLv3 or later. The website is provided as-is to explain, demonstrate, and distribute that program.",
+    "Última actualización 24 de octubre 2026. El programa está bajo GNU GPLv3 o posterior. El sitio se ofrece tal cual para explicar, demostrar y distribuir ese programa.")
+add("terms_p2", "You are responsible for how you use counts, costs, and load lists in your business. The software is a tool, not a health-department filing, not tax advice, not a POS.",
+    "Tú eres responsable de cómo usas conteos, costos y listas en tu negocio. El software es una herramienta, no un trámite de salud, no consejo fiscal, no un POS.")
+add("terms_p3", "The Live Demo (The Lot) is a sandbox with sample data. Do not put real vendor invoices or real PINs in the demo.",
+    "La demo en vivo (The Lot) es un sandbox con datos de muestra. No pongas facturas reales ni PINs reales en la demo.")
+add("terms_p4", "Trademarks of Square, Toast, Clover, MarketMan, and others belong to them. Adapters use publicly documented export formats.",
+    "Las marcas de Square, Toast, Clover, MarketMan y otras son de ellos. Los adaptadores usan formatos de export documentados en público.")
+
+# Blog
+add("blog_k", "Operator Notes", "Notas de operador")
+add("blog_h1", "Blog", "Blog")
+add("blog_lede", "Practical notes on running inventory the way real trucks do it. Free tools, real workflows, no upsells.",
+    "Notas prácticas de correr inventario como lo hacen los trucks reales. Herramientas gratis, flujos reales, sin upsell.")
+add("blog_more", "More notes coming as we test and improve the program with the trade.",
+    "Más notas conforme probamos y mejoramos el programa con el oficio.")
+add("blog_cat_cmp", "Comparison", "Comparación")
+add("blog_cat_setup", "Setup", "Setup")
+add("blog_cat_guide", "Guide", "Guía")
+add("blog_cat_ops", "Operations", "Operaciones")
+
+add("b1_t", "Why Open Source Food Truckin' is the Best Free Food Truck Inventory System",
+    "Por qué Open Source Food Truckin' es el mejor sistema gratis de inventario para food trucks")
+add("b1_x", "What “best” means when you’re the one counting the cooler at 1 a.m. with the generator still running.",
+    "Qué significa “mejor” cuando eres tú quien cuenta la nevera a la 1 a.m. con el generador todavía prendido.")
+add("b1_html", "<p>Best, for a truck, is not a feature grid. It is whether you can finish the count before the ice cream weeps, whether tomorrow’s load list is real, and whether anyone is going to bill you next month for the privilege.</p><p>Paid restaurant platforms are built for four walls. They assume a walk-in you can stand in, a desk in the office, and a manager who is not also the driver. MarketMan publishes Starter around $249 a month. xtraCHEF wants a quote and a Toast conversation. Square and Toast will sell you item stock that is not a cooler walk.</p><p>A spreadsheet is honest until the second stop type. Then you have two pars, a festival, a lunch lot, and a file named FINAL-v7.</p><p>Open Source Food Truckin' is GPLv3, local, bilingual, and built for zones that move. Voice walk, daily/weekly/monthly counts, POS CSV, plate costing, load lists. Play it in The Lot, then run it on the laptop in the cab.</p>",
+    "<p>Lo mejor, para un truck, no es una grilla de features. Es si terminas el conteo antes de que el helado llore, si la lista de mañana es real, y si alguien te va a cobrar el mes que viene por el privilegio.</p><p>Las plataformas pagadas de restaurante son para cuatro paredes. Asumen un walk-in en el que te paras, un escritorio en la oficina, y un manager que no es también el chofer. MarketMan publica Starter alrededor de $249 al mes. xtraCHEF quiere una cotización y una conversación de Toast. Square y Toast te venden stock de ítem que no es una caminata de nevera.</p><p>Una hoja es honesta hasta el segundo tipo de parada. Luego tienes dos pars, un festival, un lote de almuerzo, y un archivo llamado FINAL-v7.</p><p>Open Source Food Truckin' es GPLv3, local, bilingüe, y hecho para zonas que se mueven. Caminata de voz, conteos diario/semanal/mensual, CSV de POS, costeo, listas de carga. Juega en The Lot, luego córrelo en la laptop de la cabina.</p>")
+
+add("b2_t", "Free Inventory System for Food Trucks: Setup in One Night",
+    "Sistema de inventario gratis para food trucks: setup en una noche")
+add("b2_x", "Map sections, walk or talk the truck, reconcile invoices, first count — the exact process used on a real rolling kitchen.",
+    "Mapea secciones, camina o habla el truck, cuadra facturas, primer conteo — el proceso exacto de una cocina que rueda de verdad.")
+add("b2_html", "<p>You need a laptop, a browser, and one quiet hour after service. Download the program. Bookmark localhost. Skip AI. Name the truck. Turn on the sections you actually have.</p><p>Walk cooler, freezer, dry, prep. Say the shelf, then the product, then the pack. English, Spanish, or mixed. If the generator is loud, type. Bring invoices as CSV or typed lines. Reconcile: here’s what I registered. Confirm. Set PAR. Do the first count.</p><p>Home base opens. That is the butterfly. Tomorrow you print a load list. Next week you import Square or Toast. The process page is the long version of this night.</p>",
+    "<p>Necesitas una laptop, un navegador, y una hora quieta después del servicio. Descarga el programa. Guarda localhost. Salta la IA. Nombra el truck. Activa las secciones que sí tienes.</p><p>Camina nevera, congelador, seco, prep. Di el anaquel, luego el producto, luego el empaque. Inglés, español o mezclado. Si el generador está fuerte, escribe. Trae facturas como CSV o líneas. Cuadra: esto es lo que registré. Confirma. Pon PAR. Haz el primer conteo.</p><p>Abre Home base. Esa es la mariposa. Mañana imprimes una lista de carga. La otra semana importas Square o Toast. La página El Proceso es la versión larga de esta noche.</p>")
+
+add("b3_t", "Cooler and Freezer Inventory Is a Different Problem",
+    "El inventario de nevera y congelador es otro problema")
+add("b3_x", "Thaw, FIFO, and a door that opens onto a parking lot. Why liquor-style bottle math does not save a walk-in on wheels.",
+    "Descongelar, FIFO, y una puerta que abre a un estacionamiento. Por qué la matemática de botella de bar no salva un walk-in sobre ruedas.")
+add("b3_html", "<p>Liquor inventory (the sister program) counts tenths of a bottle that does not spoil on the drive home. A cooler does. Ice melts. Dairy dates out. Frozen cases become a puddle if the generator hiccups.</p><p>Open Source Food Truckin' treats cooler and freezer as first-class zones, not a category dump. Daily end-of-shift can be a watch list of the things that die overnight. Weekly is the full box. Variance against POS tells you whether the carne asada on the ticket matches the carne asada that left the freezer.</p><p>PAR on a cooler is a stop-type problem. Lunch lot is not festival. The load list is how you stop guessing at 6 a.m.</p>",
+    "<p>El inventario de bar (el programa hermano) cuenta décimas de botella que no se echan a perder en el viaje a casa. Una nevera sí. El hielo se derrite. Los lácteos vencen. Las cajas congeladas se hacen charco si el generador tose.</p><p>Open Source Food Truckin' trata nevera y congelador como zonas de primera, no un dump de categoría. El diario de fin de turno puede ser una lista de lo que se muere en la noche. El semanal es la caja completa. La merma contra el POS te dice si la carne asada del ticket coincide con la que salió del congelador.</p><p>El PAR de una nevera es un problema de tipo de parada. El lote de almuerzo no es un festival. La lista de carga es cómo dejas de adivinar a las 6 a.m.</p>")
+
+add("b4_t", "The Food Truck Inventory Spreadsheet Problem",
+    "El problema de la hoja de inventario del food truck")
+add("b4_x", "Almost every truck starts with a sheet, and for a while it is the right call. Where it breaks — stop types, date windows, version drift — and how to fix it.",
+    "Casi todo truck empieza con una hoja, y un tiempo es la llamada correcta. Dónde se rompe — tipos de parada, ventanas de fecha, versiones — y cómo arreglarlo.")
+add("b4_html", "<p>A sheet is the right first tool. Twelve SKUs, one window, one PAR. Then you add a brewery night, a second truck, a Spanish-speaking prep cook, and a Toast export that does not match the row names.</p><p>The break is always the same: two people edit two copies, the date window on the POS file is not the date window on the count, and nobody knows whether tortillas are packs or cases.</p><p>This program still has a spreadsheet brain. It just refuses to be a file that lives in three inboxes. Voice builds the first map. Counts, invoices, and POS feed the same products. Export CSV when you want a sheet. Keep the truth in the program.</p>",
+    "<p>Una hoja es la primera herramienta correcta. Doce SKUs, una ventana, un PAR. Luego agregas una noche de cervecería, un segundo truck, un prep que habla español, y un export de Toast que no coincide con los nombres de fila.</p><p>La rotura es siempre la misma: dos personas editan dos copias, la ventana de fechas del POS no es la del conteo, y nadie sabe si las tortillas son paquetes o cajas.</p><p>Este programa todavía tiene cerebro de hoja. Solo se niega a ser un archivo en tres bandejas. La voz arma el primer mapa. Conteos, facturas y POS alimentan los mismos productos. Exporta CSV cuando quieras una hoja. Deja la verdad en el programa.</p>")
+
+add("b5_t", "POS Integration in a Free Inventory System — Square, Toast, Clover, CSV",
+    "Integración POS en un sistema de inventario gratis — Square, Toast, Clover, CSV")
+add("b5_x", "Structured imports that turn last night’s tickets into theoretical usage, without a live API tax.",
+    "Importaciones estructuradas que convierten los tickets de anoche en uso teórico, sin impuesto de API en vivo.")
+add("b5_html", "<p>Live POS APIs are a sales department. A truck already has an export. Open Source Food Truckin' takes Square Item Sales, Toast Item Selection Details, Clover Item Sales, or any CSV with item and qty columns. Preview first. Then import.</p><p>Column names are from public vendor docs and should be checked against your real file. Clover sometimes ships without dates — pick the sales date on import. Toast voids are skipped where documented. Live API adapters are stubs, on purpose: this program runs on your laptop.</p><p>Theoretical usage = qty sold × recipe qty, in the product’s own unit. That number only means something next to a count. That is the whole point of All inputs.</p>",
+    "<p>Las APIs en vivo de POS son un departamento de ventas. Un truck ya tiene un export. Open Source Food Truckin' toma Square Item Sales, Toast Item Selection Details, Clover Item Sales, o cualquier CSV con ítem y cantidad. Previsualiza. Luego importa.</p><p>Los nombres de columna salen de docs públicos y hay que checarlos con tu archivo real. Clover a veces llega sin fechas — elige la fecha al importar. Las anulaciones de Toast se saltan donde está documentado. Los adaptadores de API en vivo son stubs, a propósito: este programa corre en tu laptop.</p><p>Uso teórico = cantidad vendida × cantidad de receta, en la unidad del producto. Ese número solo significa algo junto a un conteo. Ese es el punto de Todas las entradas.</p>")
+
+add("b6_t", "Variance Tracking That Actually Works on a Truck",
+    "Seguimiento de merma que de verdad funciona en un truck")
+add("b6_x", "Counted usage vs theoretical from the POS, with daily partials that do not wreck the weekly story.",
+    "Uso contado vs teórico del POS, con parciales diarios que no rompen la historia semanal.")
+add("b6_html", "<p>Counted usage = start count + received − end count. Theoretical = sum of qty sold × recipe qty. The gap is variance. On a truck, a daily partial count is a snapshot of a watch list — it must not zero the freezer you did not open.</p><p>v1.3 count types exist for this. Daily end-of-shift updates only its scope. Weekly sales variance skips those partials. A product counted only on a daily list uses its own last count.</p><p>Timing matters. A before-service count sits before that day’s sales. An end-of-shift count sits after. POS files carry dates, not times. Pick the timing per count type. Then read the money report: food cost %, category vs target, stock value.</p>",
+    "<p>Uso contado = conteo inicial + recibido − conteo final. Teórico = suma de cantidad vendida × cantidad de receta. El hueco es merma. En un truck, un parcial diario es una foto de una lista — no debe poner en cero el congelador que no abriste.</p><p>Los tipos de conteo de v1.3 existen para esto. El diario de fin de turno solo actualiza su alcance. La merma semanal se salta esos parciales. Un producto contado solo en una lista diaria usa su propio último conteo.</p><p>El timing importa. Un conteo antes del servicio queda antes de las ventas del día. Uno de fin de turno queda después. Los POS traen fechas, no horas. Elige el timing por tipo. Luego lee el reporte de dinero: % food cost, categoría vs meta, valor de stock.</p>")
+
+add("b7_t", "Load Lists and Stop Types: Lunch Lot Is Not a Festival",
+    "Listas de carga y tipos de parada: el lote de almuerzo no es un festival")
+add("b7_x", "PAR that changes with the parking space. Print tomorrow’s list before you roll.",
+    "PAR que cambia con el estacionamiento. Imprime la lista de mañana antes de rodar.")
+add("b7_html", "<p>Brick-and-mortar PAR assumes the room does not move. A truck’s PAR is the next stop. Lunch office park wants half the salsa and none of the funnel-cake sugar. Saturday festival wants the opposite, plus extra ice.</p><p>Stop types in this program hold their own PAR. You name the stops you actually work. The load list is on-hand versus that PAR, printable, grouped so the commissary run is one piece of paper.</p><p>It assumes on-hand is what’s on the truck. Commissary-to-truck transfer is a separate motion (multi-truck transfers exist; treat commissary as a truck if that’s how you run). Print the list the night before. That is the feature restaurants never had to invent.</p>",
+    "<p>El PAR de cuatro paredes asume que el cuarto no se mueve. El PAR de un truck es la siguiente parada. El parque de oficinas quiere la mitad de la salsa y nada de azúcar de funnel cake. El festival del sábado quiere lo contrario, más hielo extra.</p><p>Los tipos de parada en este programa tienen su propio PAR. Nombra las paradas que sí trabajas. La lista de carga es on-hand versus ese PAR, imprimible, agrupada para que la corrida al commissary sea una hoja.</p><p>Asume que el on-hand es lo que hay en el truck. La transferencia commissary-a-truck es otro movimiento (existen transferencias entre trucks; trata el commissary como un truck si así operas). Imprime la lista la noche anterior. Esa es la función que los restaurantes nunca tuvieron que inventar.</p>")
+
+add("b8_t", "Plate Costing and Food Cost % Without a $249 Platform",
+    "Costeo de plato y % de food cost sin una plataforma de $249")
+add("b8_x", "Cost per plate, margin, and food cost from the same catalog you count. Recipe qty in the product’s own unit.",
+    "Costo por plato, margen y food cost del mismo catálogo que cuentas. Cantidad de receta en la unidad del producto.")
+add("b8_html", "<p>A taco is not a mystery. It is tortillas × carne × salsa × lime, in the units you stock. This program costs the plate from last received cost (not weighted average yet) and shows food-cost % and margin.</p><p>The constraint is honest: no unit conversion. If you buy by the case and recipe by the pound, match the units or the variance will lie. That is in KNOWN-GAPS.md. We would rather show you the seam than hide it behind a paywall.</p><p>Money report needs sales plus two counts before food cost % lights up. That is the same discipline as Open Source Barware: add data, get inventory. No dashboard theater.</p>",
+    "<p>Un taco no es un misterio. Es tortillas × carne × salsa × limón, en las unidades que stockeas. Este programa costea el plato con el último costo recibido (aún no promedio ponderado) y muestra % de food cost y margen.</p><p>La limitación es honesta: no hay conversión de unidades. Si compras por caja y recetas por libra, iguala las unidades o la merma miente. Eso está en KNOWN-GAPS.md. Preferimos mostrarte la costura a esconderla detrás de un paywall.</p><p>El reporte de dinero necesita ventas más dos conteos antes de que prenda el % de food cost. Es la misma disciplina que Open Source Barware: agrega datos, obtén inventario. Sin teatro de dashboard.</p>")
+
+# Page titles
+add("title_home", "Open Source Food Truckin' — Free Food Truck Inventory Built by Operators",
+    "Open Source Food Truckin' — Inventario gratis de food truck hecho por operadores")
+add("title_process", "How Free Food Truck Inventory Works (Voice Walk → Count) | Open Source Food Truckin'",
+    "Cómo funciona el inventario gratis de food truck (caminata de voz → conteo) | Open Source Food Truckin'")
+add("title_about", "About Open Source Food Truckin' — Built for Rolling Kitchens",
+    "Acerca de Open Source Food Truckin' — Hecho para cocinas que ruedan")
+add("title_res", "Free Food Truck Resources & Free Inventory System — Open Source Food Truckin'",
+    "Recursos gratis de food truck y sistema de inventario — Open Source Food Truckin'")
+add("title_dl", "Download Free Food Truck Inventory Program v1.3-beta | Open Source Food Truckin'",
+    "Descargar programa gratis de inventario v1.3-beta | Open Source Food Truckin'")
+add("title_guide", "Program Guide — Open Source Food Truckin'",
+    "Guía del programa — Open Source Food Truckin'")
+add("title_man", "The Open Source Food Truck Manifesto — Free Inventory System",
+    "El manifiesto Open Source Food Truck — Sistema de inventario gratis")
+add("title_ch", "Release Notes v1.3-beta — Open Source Food Truckin' Changelog",
+    "Notas de versión v1.3-beta — Changelog de Open Source Food Truckin'")
+add("title_blog", "Blog — Open Source Food Truckin' | Free Inventory System Guides",
+    "Blog — Open Source Food Truckin' | Guías de inventario gratis")
+add("title_lot", "The Lot — Live Demo | Open Source Food Truckin'",
+    "The Lot — Demo en vivo | Open Source Food Truckin'")
+add("title_gpl", "Open Source Compliance — Open Source Food Truckin'",
+    "Cumplimiento open source — Open Source Food Truckin'")
+add("title_cmp", "MarketMan vs xtraCHEF vs Open Source Food Truckin' — Compared (2026)",
+    "MarketMan vs xtraCHEF vs Open Source Food Truckin' — Comparado (2026)")
+add("title_cat_free", "Free Food Truck Inventory Software | Open Source Food Truckin'",
+    "Software gratis de inventario para food trucks | Open Source Food Truckin'")
+add("title_cat_truck", "Free Truck & Cooler Inventory Tracking | Open Source Food Truckin'",
+    "Inventario gratis de truck y nevera | Open Source Food Truckin'")
+add("title_cat_prep", "Free Prep Inventory for Food Trucks | Open Source Food Truckin'",
+    "Inventario de prep gratis para food trucks | Open Source Food Truckin'")
+add("title_priv", "Privacy Policy — Open Source Food Truckin'",
+    "Política de privacidad — Open Source Food Truckin'")
+add("title_terms", "Terms of Use — Open Source Food Truckin'",
+    "Términos de uso — Open Source Food Truckin'")
+
+# Download page: email gate + counter + Mac/Windows installers (2026-10-25)
+add("dl_t3", "Mac & Windows · Python 3.9+",
+    "Mac y Windows · Python 3.9+")
+add("dl_inst_k", "Get the program",
+    "Consigue el programa")
+add("dl_inst_h", "Drop your email. Grab your truck’s inventory.",
+    "Deja tu correo. Llévate el inventario de tu truck.")
+add("dl_inst_p", "Your email unlocks the download. We only write when a new build or a fix ships — no marketing, no selling your address.",
+    "Tu correo desbloquea la descarga. Solo escribimos cuando sale una versión nueva o un arreglo — sin publicidad, sin vender tu correo.")
+add("dl_email_l", "Email",
+    "Correo electrónico")
+add("dl_mac_k", "For Mac",
+    "Para Mac")
+add("dl_mac", "Download for Mac",
+    "Descargar para Mac")
+add("dl_win_k", "For Windows",
+    "Para Windows")
+add("dl_win", "Download for Windows",
+    "Descargar para Windows")
+add("dl_fine", "v1.3.0-beta · about 680 KB · GPLv3, source included · Linux: use the Mac zip and run ./install.sh · see",
+    "v1.3.0-beta · unos 680 KB · GPLv3, código incluido · Linux: usa el zip de Mac y corre ./install.sh · ver")
+add("dl_count_k", "Trucks rolling",
+    "Trucks rodando")
+add("dl_count_cap", "downloads served — free, every one",
+    "descargas servidas — gratis, todas")
+add("dl_how_k", "After it downloads",
+    "Cuando termine la descarga")
+add("dl_how_h", "Two minutes to your first count.",
+    "Dos minutos para tu primer conteo.")
+add("dl_m1", "Open the zip in Downloads. You get a folder.",
+    "Abre el zip en Descargas. Aparece una carpeta.")
+add("dl_m2", "Double-click <b>Install.command</b>.",
+    "Haz doble clic en <b>Install.command</b>.")
+add("dl_m3", "Mac says it can’t verify it? Open <b>System Settings › Privacy &amp; Security</b>, click <b>Open Anyway</b>, then double-click again. <b>START-HERE-MAC.html</b> in the folder shows it step by step.",
+    "¿Tu Mac dice que no lo puede verificar? Abre <b>Ajustes del Sistema › Privacidad y seguridad</b>, haz clic en <b>Abrir igualmente</b> y vuelve a hacer doble clic. <b>START-HERE-MAC.html</b> en la carpeta lo muestra paso a paso.")
+add("dl_m4", "Asked to install developer tools? Click Install, then run Install.command again.",
+    "¿Te pide instalar herramientas de desarrollo? Haz clic en Instalar y vuelve a correr Install.command.")
+add("dl_m5", "Your browser opens the program. Bookmark it — <b>that bookmark is the software</b>.",
+    "Tu navegador abre el programa. Guárdalo en favoritos — <b>ese favorito es el software</b>.")
+add("dl_w1", "Right-click the zip › <b>Extract All</b>. Open the folder.",
+    "Clic derecho en el zip › <b>Extraer todo</b>. Abre la carpeta.")
+add("dl_w2", "Double-click <b>Install.bat</b>. “Windows protected your PC”? <b>More info › Run anyway</b>.",
+    "Haz doble clic en <b>Install.bat</b>. ¿“Windows protegió su PC”? <b>Más información › Ejecutar de todas formas</b>.")
+add("dl_w3", "No Python yet? It opens python.org. Install it with <b>Add python.exe to PATH</b> checked, then run Install.bat again.",
+    "¿Aún no tienes Python? Se abre python.org. Instálalo con <b>Add python.exe to PATH</b> marcado y vuelve a correr Install.bat.")
+add("dl_w4", "Your browser opens the program. Bookmark it — <b>that bookmark is the software</b>.",
+    "Tu navegador abre el programa. Guárdalo en favoritos — <b>ese favorito es el software</b>.")
+add("dl_after", "It starts by itself when the computer turns on, works offline, and keeps every count on your machine. Updating later: run the new installer — your data stays.",
+    "Arranca solo al prender la computadora, funciona sin internet y guarda cada conteo en tu máquina. Para actualizar: corre el instalador nuevo — tus datos se quedan.")
+add("dl_err_email", "Enter your email first — that’s what unlocks the download.",
+    "Primero escribe tu correo — eso desbloquea la descarga.")
+add("dl_err_busy", "Too many downloads from this connection. Try again in an hour.",
+    "Demasiadas descargas desde esta conexión. Intenta de nuevo en una hora.")
+add("dl_err_net", "Couldn’t reach the server. Check your connection and try again.",
+    "No se pudo conectar con el servidor. Revisa tu conexión e intenta otra vez.")
+add("dl_ok", "Downloading… check your Downloads folder, then follow the steps below.",
+    "Descargando… revisa tu carpeta de Descargas y sigue los pasos de abajo.")
+add("dl_expired", "That download link expired. Enter your email again to get a fresh one.",
+    "Ese enlace de descarga venció. Escribe tu correo otra vez para uno nuevo.")
+add("gpl_p", "Open Source Food Truckin' is free software distributed under the GNU General Public License version 3 or later — the same license as Open Source Barware. The full license, notices, and corresponding source are in the same zip anyone downloads.",
+    "Open Source Food Truckin' es software libre distribuido bajo la Licencia Pública General de GNU versión 3 o posterior — la misma licencia que Open Source Barware. La licencia completa, los avisos y el código fuente correspondiente vienen en el mismo zip que cualquiera descarga.")
+add("gpl_li1", "Every download includes LICENSE.txt (the full GPLv3 text), NOTICE.md, README, CHANGELOG, and the Python source.",
+    "Cada descarga incluye LICENSE.txt (el texto completo de la GPLv3), NOTICE.md, README, CHANGELOG y el código Python.")
+add("gpl_btn", "Get the download (license included)",
+    "Obtén la descarga (licencia incluida)")
+add("gpl_read", "Read the full GPLv3 text",
+    "Lee el texto completo de la GPLv3")
+add("man_li2", "One email to download — only so we can tell you when a fix ships. The program itself never asks for it and never phones home.",
+    "Un correo para descargar — solo para avisarte cuando sale un arreglo. El programa en sí nunca lo pide y nunca manda nada a casa.")

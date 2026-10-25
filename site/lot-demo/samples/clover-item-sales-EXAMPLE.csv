@@ -1,0 +1,4 @@
+Name,Category,Quantity Sold,Gross Sales,Discounts,Refunds,Net Sales
+Beef Taco,Tacos,40,140.00,0.00,0.00,140.00
+Chicken Burrito,Burritos,12,132.00,5.00,0.00,127.00
+Total,,52,272.00,5.00,0.00,267.00

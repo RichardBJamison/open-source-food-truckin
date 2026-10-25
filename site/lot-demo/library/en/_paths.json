@@ -1,0 +1,12 @@
+{ "title": "Learn Open Source Food Truckin'",
+  "intro": "Everything you and your crew need to run the program, from the first walk of the truck to food cost in dollars. Search any word, follow a path, or ask Help in the corner.",
+  "paths": [
+  { "title": "New owner: first hour", "blurb": "From an empty program to your first count.", "items": ["welcome", "setup/how-setup-works", "setup/step-2-sections", "setup/pass-1-walk-and-map", "setup/reconcile", "setup/approve-the-map-and-first-count"] },
+  { "title": "Count day", "blurb": "Walk it, talk it, save it.", "items": ["counting/start-a-count", "counting/walk-the-truck", "voice/speak-your-inventory", "voice/check-what-we-heard", "count-types/the-three-types"] },
+  { "title": "Buying and receiving", "blurb": "Order what's short, receive it right.", "items": ["ordering/the-order-list", "ordering/purchase-orders", "receiving/log-a-delivery", "receiving/read-an-invoice-with-ai-optional", "receiving/many-lines-at-once"] },
+  { "title": "Know your food cost", "blurb": "Sales, plates and variance in dollars.", "items": ["pos-sales/export-from-your-pos", "pos-sales/import-it", "menu-costing/add-a-plate", "menu-costing/ingredients", "reports/sales-vs-counts", "reports/money"] },
+  { "title": "Hitting the road", "blurb": "Stops, load lists and more trucks.", "items": ["stops/stop-types", "stops/tomorrow-s-load-list", "trucks-crew/trucks", "trucks-crew/transfers"] },
+  { "title": "Running a crew", "blurb": "Logins, roles and the board.", "items": ["people/open-mode", "people/roles", "people/add-someone", "count-types/who-can-start-which-count", "trucks-crew/crew-board"] },
+  { "title": "Connect your AI", "blurb": "Optional invoice reading and a personal tutor.", "items": ["ai/you-don-t-need-ai", "ai/what-ai-does-here", "ai/set-it-up", "ai/cost-and-privacy"] },
+  { "title": "Something looks wrong", "blurb": "Quick fixes.", "items": ["troubleshooting", "troubleshooting/variance-looks-huge", "troubleshooting/the-mic-doesn-t-listen", "data/backups"] }
+] }

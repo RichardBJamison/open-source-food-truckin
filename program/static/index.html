@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en" translate="no">
+<head>
+  <meta charset="utf-8" />
+  <meta name="google" content="notranslate" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0d1030" />
+  <link rel="icon" href="/static/img/gear.svg" type="image/svg+xml" />
+  <link href="/static/fonts/fonts.css" rel="stylesheet" />
+  <title>OSFT — Open Source Food Truckin</title>
+  <link rel="stylesheet" href="/static/css/app.css" />
+</head>
+<body>
+  <a class="skip" href="#app" data-i18n="skip">Skip to content</a>
+  <header class="topbar">
+    <button type="button" class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="sidebar"><span></span><span></span><span></span><span class="sr" data-i18n="menu">Menu</span></button>
+    <div class="topbar-brand"><img src="/static/img/gear.svg" alt="" width="28" height="28" class="spin" /><span>Food Truckin'</span></div>
+    <div class="locale-switch" role="group" aria-label="Language">
+      <button type="button" data-locale="en" class="active">EN</button><button type="button" data-locale="es">ES</button>
+    </div>
+  </header>
+  <div class="shell">
+  <aside class="admin-sidebar" id="sidebar">
+      <div class="sidebar-brand">
+        <div class="sidebar-mark"><img src="/static/img/gear.svg" alt="" width="40" height="40" class="spin" /><span class="sidebar-mark-label" data-i18n="app_short">OSFT</span></div>
+        <p class="sidebar-title">Open Source<br/><span>Food Truckin'</span></p>
+        <p class="sidebar-business-name" id="truck-label">—</p>
+        <div class="sidebar-cycle-chip" id="sidebar-cycle">—</div>
+        <div class="locale-switch locale-switch--side" role="group" aria-label="Language">
+          <button type="button" data-locale="en" class="active">EN</button><button type="button" data-locale="es">ES</button>
+        </div>
+      </div>
+      <nav class="sidebar-nav" id="main-nav" aria-label="Main navigation">
+        <button type="button" class="sidebar-link" data-group="home">
+          <span class="sidebar-icon" aria-hidden="true">🏠</span>
+          <span class="sidebar-link-text"><strong data-i18n="nav_home">Home base</strong><small data-i18n="navs_home">Today's pulse & quick paths</small></span>
+        </button>
+        <button type="button" class="sidebar-link" data-group="sheets">
+          <span class="sidebar-icon" aria-hidden="true">📋</span>
+          <span class="sidebar-link-text"><strong data-i18n="nav_sheets">Inventory sheets</strong><small data-i18n="navs_sheets">Count · variance · order list</small></span>
+        </button>
+        <button type="button" class="sidebar-link" data-group="reports">
+          <span class="sidebar-icon" aria-hidden="true">📈</span>
+          <span class="sidebar-link-text"><strong data-i18n="nav_reports">Reports</strong><small data-i18n="navs_reports">Sales vs. counts in $</small></span>
+        </button>
+        <button type="button" class="sidebar-link" data-group="inhouse">
+          <span class="sidebar-icon" aria-hidden="true">🚚</span>
+          <span class="sidebar-link-text"><strong data-i18n="nav_inhouse">On the truck</strong><small data-i18n="navs_inhouse2">Zones · trucks · staff board</small></span>
+        </button>
+        <button type="button" class="sidebar-link" data-group="inputs">
+          <span class="sidebar-icon" aria-hidden="true">📥</span>
+          <span class="sidebar-link-text"><strong data-i18n="nav_inputs">All inputs</strong><small data-i18n="navs_inputs">POS sales · invoices · photos</small></span>
+        </button>
+        <button type="button" class="sidebar-link" data-group="menu">
+          <span class="sidebar-icon" aria-hidden="true">🌮</span>
+          <span class="sidebar-link-text"><strong data-i18n="nav_menu">Menu & costing</strong><small data-i18n="navs_menu">Plate cost · food cost %</small></span>
+        </button>
+        <button type="button" class="sidebar-link" data-group="stops">
+          <span class="sidebar-icon" aria-hidden="true">📍</span>
+          <span class="sidebar-link-text"><strong data-i18n="nav_stops">Stops & load lists</strong><small data-i18n="navs_stops">Lunch · brewery · festival</small></span>
+        </button>
+        <button type="button" class="sidebar-link" data-group="setup">
+          <span class="sidebar-icon" aria-hidden="true">⚙️</span>
+          <span class="sidebar-link-text"><strong data-i18n="nav_settings">Settings</strong><small data-i18n="navs_settings">Business · people · vendors · data</small></span>
+        </button>
+      </nav>
+      <div class="sidebar-user" id="sidebar-user"></div>
+      <div class="sidebar-foot">
+        <p class="sidebar-foot-tag" data-i18n="foot_tag">Home base</p>
+        <p class="sidebar-foot-hint" data-i18n="foot_hint">Your numbers update every time you complete a count.</p>
+        <p class="sidebar-foot-ver" id="version-label"></p>
+      </div>
+  </aside>
+  <div class="scrim" id="scrim" hidden></div>
+  <main id="app">
+    <!-- HOME (OSBW "Home base") -->
+    <section id="view-home" class="view" data-group="home">
+      <div class="dash-hero">
+        <img class="dash-hero-art" src="/static/img/hero-1280.webp" srcset="/static/img/hero-1024.webp 1024w, /static/img/hero-1280.webp 1280w" sizes="(max-width:960px) 100vw, 70vw" alt="" />
+        <div class="dash-hero-copy">
+          <p class="view-eyebrow" data-i18n="eyebrow_ops">Operations</p>
+          <h1 data-i18n="home_title">Home base</h1>
+          <p data-i18n="home_sub">Your truck's numbers and quick paths — live after every count.</p>
+          <span class="dash-hero-badge" id="dash-badge">—</span>
+          <div class="truck-switch" id="truck-switch"></div>
+        </div>
+      </div>
+      <div id="home-alerts"></div>
+      <div class="card">
+        <div class="panel-head-row"><h2 data-i18n="metrics_title">Truck metrics</h2><span class="caption" data-i18n="cap_live">Live!</span></div>
+        <div class="metrics-grid" id="home-stats"></div>
+      </div>
+      <div class="card">
+        <h2 data-i18n="jump_title">Jump to</h2>
+        <div class="nav-grid">
+          <button type="button" class="nav-card nav-card--hero" data-goto="voice"><span class="nav-card-icon" aria-hidden="true">🎙️</span><strong data-i18n="jc_voice">Speak your inventory</strong><span data-i18n="jc_voice_s">Say it, check it, save it</span></button>
+          <button type="button" class="nav-card nav-card--teal" data-goto="count"><span class="nav-card-icon" aria-hidden="true">📱</span><strong data-i18n="jc_count">Count walk — walk the truck</strong><span data-i18n="jc_count_s">Big taps · zone by zone · one-hand friendly</span></button>
+          <button type="button" class="nav-card nav-card--teal" data-goto="zones"><span class="nav-card-icon" aria-hidden="true">🚚</span><strong data-i18n="nav_inhouse">On the truck</strong><span data-i18n="navs_inhouse">Cooler · freezer · dry · prep</span></button>
+          <button type="button" class="nav-card nav-card--orange" data-goto="variance"><span class="nav-card-icon" aria-hidden="true">📋</span><strong data-i18n="nav_sheets">Inventory sheets</strong><span data-i18n="navs_sheets">Count · variance · order list</span></button>
+          <button type="button" class="nav-card nav-card--pop" data-goto="reorder"><span class="nav-card-icon" aria-hidden="true">🛒</span><strong data-i18n="tab_reorder">Order list</strong><span data-i18n="jc_order_s">What to buy, grouped by vendor</span></button>
+          <button type="button" class="nav-card nav-card--teal" data-goto="sales"><span class="nav-card-icon" aria-hidden="true">📥</span><strong data-i18n="nav_inputs">All inputs</strong><span data-i18n="navs_inputs">POS sales · invoices · photos</span></button>
+          <button type="button" class="nav-card nav-card--orange" data-goto="menu"><span class="nav-card-icon" aria-hidden="true">🌮</span><strong data-i18n="nav_menu">Menu &amp; costing</strong><span data-i18n="navs_menu">Plate cost · food cost %</span></button>
+          <button type="button" class="nav-card nav-card--pop nav-card--wide" data-goto="stops"><span class="nav-card-icon" aria-hidden="true">📍</span><strong data-i18n="jc_load">Tomorrow's load list</strong><span data-i18n="navs_stops">Lunch · brewery · festival</span></button>
+        </div>
+      </div>
+      <div class="card" id="home-low-card">
+        <div id="home-low-par"></div>
+        <div class="row" style="margin-top:1rem">
+          <button type="button" class="btn btn-ghost" id="btn-seed" data-i18n="btn_seed">Load sample taco truck</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- CATALOG -->
+    <section id="view-catalog" class="view hidden" data-group="sheets">
+      <header class="view-header"><p class="view-eyebrow" data-i18n="nav_sheets"></p><h1 data-i18n="catalog_title">Product master</h1><p data-i18n="hdr_catalog">Every item, its unit, PAR, zone and cost.</p></header>
+      <div class="workbook-tabs" role="tablist" data-tabs="sheets"></div>
+      <div class="card">
+        <div class="row spread">
+          <h2 data-i18n="catalog_title">Catalog</h2>
+          <div class="row">
+            <button type="button" class="btn btn-primary btn-sm" id="btn-add-item" data-i18n="btn_add_item">Add item</button>
+            <button type="button" class="btn btn-sm" data-goto="starter" data-i18n="btn_from_starter">Pick from starter list</button>
+            <a class="btn btn-sm" href="/api/items/export.csv" id="btn-export-items" data-i18n="btn_export_csv">Export CSV</a>
+            <button type="button" class="btn btn-sm" id="btn-import-items" data-i18n="btn_import_csv">Import CSV</button>
+          </div>
+        </div>
+        <div id="catalog-error" class="alert alert-error hidden"></div>
+        <div id="catalog-form-wrap" class="hidden">
+          <form id="item-form" class="form-grid cols-2" novalidate>
+            <input type="hidden" id="item-id" />
+            <div>
+              <label for="item-name" data-i18n="label_name">Name</label>
+              <input id="item-name" name="name" required autocomplete="off" />
+            </div>
+            <div>
+              <label for="item-unit" data-i18n="label_unit">Unit</label>
+              <input id="item-unit" name="unit" required placeholder="lb, pack, qt…" />
+            </div>
+            <div>
+              <label for="item-par" data-i18n="label_par">PAR / min</label>
+              <input id="item-par" name="par" type="number" min="0" step="any" required />
+            </div>
+            <div>
+              <label for="item-category" data-i18n="label_category">Category</label>
+              <input id="item-category" name="category" required />
+            </div>
+            <div>
+              <label for="item-zone" data-i18n="label_zone">Zone</label>
+              <select id="item-zone" name="zone" required>
+                <option value="cooler">cooler</option>
+                <option value="freezer">freezer</option>
+                <option value="dry">dry</option>
+                <option value="prep">prep</option>
+              </select>
+            </div>
+            <div>
+              <label for="item-onhand" data-i18n="label_on_hand">On hand</label>
+              <input id="item-onhand" name="on_hand" type="number" min="0" step="any" value="0" />
+            </div>
+            <div>
+              <label for="item-cost" data-i18n="label_unit_cost">Cost per unit ($)</label>
+              <input id="item-cost" name="cost" type="number" min="0" step="any" inputmode="decimal" />
+            </div>
+            <div><label for="item-vendor" data-i18n="label_vendor">Vendor</label><select id="item-vendor"></select></div>
+            <div><label for="item-case-size" data-i18n="label_case_size">Units per case</label><input id="item-case-size" type="number" min="0" step="any" inputmode="decimal" /></div>
+            <div><label for="item-pack" data-i18n="label_pack">Pack size (as printed)</label><input id="item-pack" placeholder="4 × 5 lb" /></div>
+            <div><label for="item-name-es" data-i18n="label_name_es">Spanish name</label><input id="item-name-es" /></div>
+            <div style="grid-column:1/-1"><label for="item-aliases" data-i18n="label_aliases">Other names you say out loud (comma-separated)</label><input id="item-aliases" placeholder="beef, carne" /></div>
+            <div><label for="item-sku" data-i18n="label_sku">Vendor SKU / item #</label><input id="item-sku" /></div>
+            <div><label for="item-barcode" data-i18n="label_barcode">Barcode</label><div class="row"><input id="item-barcode" inputmode="numeric" style="flex:1" /><button type="button" class="btn btn-sm" id="btn-scan-barcode" data-i18n="btn_scan">Scan</button></div></div>
+            <div style="grid-column:1/-1"><label for="item-notes" data-i18n="note">Note</label><input id="item-notes" /></div>
+            <div class="row" style="grid-column:1/-1">
+              <button type="submit" class="btn btn-primary" data-i18n="btn_save">Save</button>
+              <button type="button" class="btn btn-ghost" id="btn-cancel-item" data-i18n="btn_cancel">Cancel</button>
+            </div>
+          </form>
+        </div>
+        <div id="import-wrap" class="hidden" style="margin-top:1rem"></div>
+        <div class="row" style="margin-top:1rem"><input id="catalog-search" type="search" data-i18n-ph="search_products" placeholder="Search products…" style="flex:1" /></div>
+        <div id="catalog-list" class="table-wrap" style="margin-top:.5rem"></div>
+      </div>
+    </section>
+
+    <!-- ZONES -->
+    <section id="view-zones" class="view hidden" data-group="inhouse">
+      <header class="view-header"><p class="view-eyebrow" data-i18n="nav_inhouse"></p><h1 data-i18n="zones_title">Storage map</h1><p data-i18n="hdr_zones">What's on the truck right now, zone by zone.</p></header>
+      <div class="workbook-tabs" role="tablist" data-tabs="inhouse"></div>
+      <div class="card">
+        <h2 data-i18n="zones_title">Storage map</h2>
+        
+        <div id="zones-map" class="zone-grid"></div>
+      </div>
+    </section>
+
+    <!-- COUNT -->
+    <section id="view-count" class="view hidden" data-group="sheets">
+      <header class="view-header"><p class="view-eyebrow" data-i18n="nav_sheets"></p><h1 data-i18n="count_title">Count walk</h1><p data-i18n="hdr_count">Walk the truck zone by zone. Progress saves as you go.</p></header>
+      <div class="workbook-tabs" role="tablist" data-tabs="sheets"></div>
+      <div class="card">
+        <h2 data-i18n="count_title">Count walk</h2>
+        <div id="count-status" class="muted" style="margin-bottom:.75rem"></div>
+        <div class="row ct-row" style="margin-bottom:.75rem">
+          <label class="ct-pick"><span data-i18n="ct_type">Count type</span> <select id="count-type"></select></label>
+          <label class="ct-pick"><span data-i18n="ct_date">Business date</span> <input type="date" id="count-date" /></label>
+        </div>
+        <div class="row count-action-bar" style="margin-bottom:1rem">
+          <button type="button" class="btn btn-primary" id="btn-start-count" data-i18n="btn_start_count">Start count walk</button>
+          <button type="button" class="btn" id="btn-complete-count" data-i18n="btn_complete_count" disabled>Save &amp; complete count</button>
+        </div>
+        <div id="count-error" class="alert alert-error hidden"></div>
+        <div id="count-scope" class="hidden"></div>
+        <div id="count-checklist"></div>
+        <div id="count-form"></div>
+      </div>
+      <div class="card"><h2 data-i18n="ct_history">Count history</h2><div id="count-history" class="table-wrap"></div></div>
+    </section>
+
+    <!-- VARIANCE -->
+    <section id="view-variance" class="view hidden" data-group="sheets">
+      <header class="view-header"><p class="view-eyebrow" data-i18n="nav_sheets"></p><h1 data-i18n="variance_title">Variance</h1><p data-i18n="hdr_variance">Counted vs. PAR, from your last completed count.</p></header>
+      <div class="workbook-tabs" role="tablist" data-tabs="sheets"></div>
+      <div class="card">
+        <h2 data-i18n="variance_title">Variance</h2>
+        <div id="variance-meta" class="muted" style="margin-bottom:.75rem"></div>
+        <div id="variance-table" class="table-wrap"></div>
+      </div>
+    </section>
+
+    <!-- RECEIVE -->
+    <section id="view-receive" class="view hidden" data-group="inputs">
+      <header class="view-header"><p class="view-eyebrow" data-i18n="nav_inputs"></p><h1 data-i18n="receive_title">Purchase / receive</h1><p data-i18n="hdr_receive">Log deliveries and snap the invoice.</p></header>
+      <div class="workbook-tabs" role="tablist" data-tabs="inputs"></div>
+      <div class="card">
+        <h2 data-i18n="receive_title">Purchase / receive</h2>
+        <div id="receive-error" class="alert alert-error hidden"></div>
+        <form id="receive-form" class="form-grid cols-2" novalidate>
+          <div>
+            <label for="recv-item" data-i18n="label_item">Item</label>
+            <select id="recv-item" required></select>
+          </div>
+          <div>
+            <label for="recv-qty" data-i18n="qty">Qty</label>
+            <input id="recv-qty" type="number" min="0.01" step="any" required />
+          </div>
+          <div>
+            <label for="recv-vendor" data-i18n="label_vendor">Vendor</label>
+            <input id="recv-vendor" autocomplete="off" />
+          </div>
+          <div>
+            <label for="recv-cost" data-i18n="label_unit_cost">Cost per unit ($)</label>
+            <input id="recv-cost" type="number" min="0" step="any" inputmode="decimal" />
+          </div>
+          <div style="grid-column:1/-1">
+            <label for="recv-note" data-i18n="note">Note</label>
+            <input id="recv-note" placeholder="PO#, invoice #…" />
+          </div>
+          <div style="grid-column:1/-1">
+            <label for="recv-photo" data-i18n="label_photo">Invoice / receipt photo (optional)</label>
+            <input id="recv-photo" type="file" accept="image/*,application/pdf" capture="environment" />
+          </div>
+          <div>
+            <button type="submit" class="btn btn-primary" data-i18n="btn_receive">Log receive</button>
+          </div>
+        </form>
+        <h3 style="margin-top:1.25rem" data-i18n="recent">Recent</h3>
+        <div id="ai-suggest" class="hidden"></div>
+        <div id="receive-list" class="table-wrap"></div>
+      </div>
+    </section>
+
+
+    <!-- MENU / RECIPES (v0.2) -->
+    <section id="view-menu" class="view hidden" data-group="menu">
+      <header class="view-header"><p class="view-eyebrow" data-i18n="nav_menu"></p><h1 data-i18n="menu_title">Menu & recipe costing</h1><p data-i18n="hdr_menu">Build each plate from catalog items.</p></header>
+      <div class="workbook-tabs" role="tablist" data-tabs="menu"></div>
+      <div class="card">
+        <div class="row spread">
+          <h2 data-i18n="menu_title">Menu &amp; recipe costing</h2>
+          <button type="button" class="btn btn-primary btn-sm" id="btn-add-menu" data-i18n="btn_add_menu">Add menu item</button>
+        </div>
+        <p class="muted" data-i18n="menu_hint">Build each plate from catalog items. Cost per plate uses each item's cost per unit.</p>
+        <div id="menu-error" class="alert alert-error hidden"></div>
+        <div id="menu-form-wrap" class="hidden">
+          <form id="menu-form" class="form-grid cols-2" novalidate>
+            <input type="hidden" id="menu-id" />
+            <div><label for="menu-name" data-i18n="label_name">Name</label><input id="menu-name" required /></div>
+            <div><label for="menu-price" data-i18n="label_menu_price">Menu price ($)</label><input id="menu-price" type="number" min="0" step="any" inputmode="decimal" required /></div>
+            <div><label for="menu-category" data-i18n="label_category">Category</label><input id="menu-category" /></div>
+            <div><label for="menu-posnames" data-i18n="label_pos_names">Name(s) in POS, comma-separated</label><input id="menu-posnames" placeholder="Beef Taco, Taco - Beef" /></div>
+            <div style="grid-column:1/-1">
+              <label data-i18n="label_ingredients">Ingredients (qty per plate, in the item's unit)</label>
+              <div id="menu-ings"></div>
+              <button type="button" class="btn btn-sm" id="btn-add-ing" data-i18n="btn_add_ing">+ Ingredient</button>
+            </div>
+            <div class="row" style="grid-column:1/-1">
+              <button type="submit" class="btn btn-primary" data-i18n="btn_save">Save</button>
+              <button type="button" class="btn btn-ghost" id="btn-cancel-menu" data-i18n="btn_cancel">Cancel</button>
+            </div>
+          </form>
+        </div>
+        <div id="menu-list" class="table-wrap" style="margin-top:1rem"></div>
+      </div>
+    </section>
+
+    <!-- SALES / POS IMPORT (v0.2) -->
+    <section id="view-sales" class="view hidden" data-group="inputs">
+      <header class="view-header"><p class="view-eyebrow" data-i18n="nav_inputs"></p><h1 data-i18n="sales_title">Sales import (any POS)</h1><p data-i18n="hdr_sales">Square, Toast, Clover or any CSV.</p></header>
+      <div class="workbook-tabs" role="tablist" data-tabs="inputs"></div>
+      <div class="card">
+        <h2 data-i18n="sales_title">Sales import (any POS)</h2>
+        <p class="muted" data-i18n="sales_hint">Export item sales from your POS as CSV and upload it. OSFT guesses the format; fix the column mapping if needed.</p>
+        <div id="sales-error" class="alert alert-error hidden"></div>
+        <form id="sales-form" class="form-grid cols-2" novalidate>
+          <div style="grid-column:1/-1"><label for="sales-file" data-i18n="label_csv">CSV file</label><input id="sales-file" type="file" accept=".csv,text/csv" /></div>
+          <div><label for="sales-adapter" data-i18n="label_pos">POS format</label><select id="sales-adapter"></select></div>
+          <div><label for="sales-date" data-i18n="label_sales_date">Sales date (if file has none)</label><input id="sales-date" type="date" /></div>
+          <div id="sales-adapter-note" class="muted" style="grid-column:1/-1"></div>
+          <div id="sales-mapping" class="form-grid cols-2 hidden" style="grid-column:1/-1"></div>
+          <div class="row" style="grid-column:1/-1">
+            <button type="button" class="btn" id="btn-sales-preview" data-i18n="btn_preview">Preview</button>
+            <button type="submit" class="btn btn-primary" id="btn-sales-import" data-i18n="btn_import" disabled>Import</button>
+          </div>
+        </form>
+        <div id="sales-preview" class="table-wrap" style="margin-top:1rem"></div>
+        <h3 style="margin-top:1.25rem" data-i18n="sales_imports">Imports</h3>
+        <div id="sales-list" class="table-wrap"></div>
+      </div>
+    </section>
+
+
+    <!-- REPORTS (OSBW "Reports") -->
+    <section id="view-reports" class="view hidden" data-group="reports">
+      <header class="view-header"><p class="view-eyebrow" data-i18n="nav_reports">Reports</p><h1 data-i18n="sales_var_title">Variance from sales</h1><p data-i18n="hdr_reports">What sales say you used vs. what your counts show — in dollars.</p></header>
+      <div class="workbook-tabs" role="tablist" data-tabs="reports"></div>
+      <div class="card">
+        <h2 data-i18n="sales_var_title">Variance from sales</h2>
+        <p class="muted" data-i18n="sales_var_hint">Theoretical usage (sales × recipes) vs. counted usage (start count + received − end count) between your last two full counts.</p>
+        <div id="sales-var"></div>
+      </div>
+    </section>
+
+    <!-- ORDER LIST (OSBW "Order Generator") -->
+    <section id="view-reorder" class="view hidden" data-group="sheets">
+      <header class="view-header"><p class="view-eyebrow" data-i18n="nav_sheets">Inventory sheets</p><h1 data-i18n="tab_reorder">Order list</h1><p data-i18n="hdr_reorder">Everything under PAR, grouped by the vendor you last bought it from.</p></header>
+      <div class="workbook-tabs" role="tablist" data-tabs="sheets"></div>
+      <div class="card">
+        <div class="panel-head-row"><h2 data-i18n="reorder_title">Shopping run</h2><div class="row"><a class="btn btn-sm" href="/api/export/reorder.csv" data-i18n="btn_export_csv">CSV</a><button type="button" class="btn btn-sm" id="btn-print-order" data-i18n="btn_print">Print</button></div></div>
+        <div id="reorder-list"></div>
+      </div>
+    </section>
+
+    <!-- STOPS / LOAD LIST (v0.2) -->
+    <section id="view-stops" class="view hidden" data-group="stops">
+      <header class="view-header"><p class="view-eyebrow" data-i18n="nav_stops"></p><h1 data-i18n="stops_title">Stop types & load list</h1><p data-i18n="hdr_stops">Set PARs per stop and print tomorrow's load.</p></header>
+      <div class="workbook-tabs" role="tablist" data-tabs="stops"></div>
+      <div class="card">
+        <div class="row spread">
+          <h2 data-i18n="stops_title">Stop types &amp; load list</h2>
+          <button type="button" class="btn btn-primary btn-sm" id="btn-add-stop" data-i18n="btn_add_stop">Add stop type</button>
+        </div>
+        <p class="muted" data-i18n="stops_hint">Set PAR per stop (lunch, brewery, festival…). Blank = item's everyday PAR.</p>
+        <div id="stops-error" class="alert alert-error hidden"></div>
+        <div id="stop-form-wrap" class="hidden">
+          <form id="stop-form" class="form-grid cols-2" novalidate>
+            <input type="hidden" id="stop-id" />
+            <div><label for="stop-name" data-i18n="label_name">Name</label><input id="stop-name" required /></div>
+            <div><label for="stop-notes" data-i18n="note">Note</label><input id="stop-notes" /></div>
+            <div id="stop-pars" class="table-wrap" style="grid-column:1/-1"></div>
+            <div class="row" style="grid-column:1/-1">
+              <button type="submit" class="btn btn-primary" data-i18n="btn_save">Save</button>
+              <button type="button" class="btn btn-ghost" id="btn-cancel-stop" data-i18n="btn_cancel">Cancel</button>
+            </div>
+          </form>
+        </div>
+        <div class="form-grid cols-2" style="margin-top:1rem">
+          <div><label for="load-stop" data-i18n="label_tomorrow_stop">Tomorrow's stop</label><select id="load-stop"></select></div>
+          <div><label for="load-date" data-i18n="label_date">Date</label><input id="load-date" type="date" /></div>
+        </div>
+        <div class="row" style="margin-top:.75rem">
+          <button type="button" class="btn" id="btn-edit-stop" data-i18n="btn_edit">Edit</button>
+          <a class="btn btn-primary" id="btn-print-load" target="_blank" data-i18n="btn_print_load">Printable load list</a>
+        </div>
+        <div id="load-list" class="table-wrap" style="margin-top:1rem"></div>
+      </div>
+    </section>
+
+    <!-- SETUP -->
+    <section id="view-setup" class="view hidden" data-group="setup">
+      <header class="view-header"><p class="view-eyebrow" data-i18n="nav_settings"></p><h1 data-i18n="setup_title">Setup</h1><p data-i18n="hdr_setup">Truck name, language and optional AI reading.</p></header>
+      <div class="workbook-tabs" role="tablist" data-tabs="setup"></div>
+      <div id="business-root"></div>
+      <div class="card">
+        <h2 data-i18n="setup_title">Setup</h2>
+        <p class="muted" data-i18n="setup_hint">Set your truck name and preferred units. Saved locally.</p>
+        <div id="setup-error" class="alert alert-error hidden"></div>
+        <div id="setup-ok" class="alert alert-ok hidden" data-i18n="saved">Saved.</div>
+        <form id="setup-form" class="form-grid cols-2" novalidate>
+          <div style="grid-column:1/-1">
+            <label for="setup-truck" data-i18n="label_truck_name">Truck / business name</label>
+            <input id="setup-truck" required maxlength="120" />
+          </div>
+          <div>
+            <label for="setup-units" data-i18n="label_units">Units preference</label>
+            <select id="setup-units">
+              <option value="imperial" data-i18n="units_imperial">Imperial</option>
+              <option value="metric" data-i18n="units_metric">Metric</option>
+            </select>
+          </div>
+          <div>
+            <label for="setup-locale" data-i18n="label_locale">Language</label>
+            <select id="setup-locale">
+              <option value="en">English</option>
+              <option value="es">Español</option>
+            </select>
+          </div>
+          <div>
+            <button type="submit" class="btn btn-primary" data-i18n="btn_save">Save</button>
+          </div>
+        </form>
+      </div>
+      <div class="card sister-promo-panel" id="ihsSisterPromo">
+        <p class="view-eyebrow" data-i18n="promo_eyebrow">Also free · Intelligent Hospitality Systems</p>
+        <h2 data-i18n="promo_title">More from the same house</h2>
+        <a class="promo-logo-link" href="https://www.reservationrelief.com/" target="_blank" rel="noopener noreferrer"><img class="promo-rr-logo" src="/static/img/reservation-relief-logo.png" alt="Reservation Relief" width="300" height="54"></a>
+        <p class="muted" data-i18n-html="promo_lead"></p>
+        <div class="coming-soon-hero"><span class="coming-soon-badge" data-i18n="promo_badge">Reservation Relief 2026</span>
+          <p class="coming-soon-tagline" data-i18n="promo_tagline"></p></div>
+        <div class="coming-soon-grid">
+          <article class="coming-soon-card coming-soon-card--primary"><h3>Reservation Relief</h3><p data-i18n="promo_rr"></p></article>
+          <article class="coming-soon-card"><h3>Open Source Barware</h3><p data-i18n="promo_osbw"></p></article>
+          <article class="coming-soon-card"><h3 data-i18n="promo_web_h">$300 websites · Nexus</h3><p data-i18n="promo_web"></p></article>
+        </div>
+        <div class="sister-promo-actions">
+          <a class="btn btn-primary" href="https://www.reservationrelief.com/" target="_blank" rel="noopener noreferrer" data-i18n="promo_cta_rr">Get Reservation Relief 2026</a>
+          <a class="promo-logo-link" href="https://intelligenthospitalitysystems.com/" target="_blank" rel="noopener noreferrer"><img class="promo-ihs-logo" src="/static/img/ihs-logo.png" alt="Intelligent Hospitality Systems (IHS)" height="40"></a>
+          <a class="btn" href="https://intelligenthospitalitysystems.com/" target="_blank" rel="noopener noreferrer" data-i18n="promo_cta_ihs">More free tools at IHS</a>
+          <button type="button" class="btn" id="promo-reopen" data-i18n="promo_reopen">Show the thank-you note</button>
+        </div>
+      </div>
+    </section>
+    <section id="view-voice" class="view hidden" data-group="sheets">
+      <header class="view-header"><p class="view-eyebrow" data-i18n="nav_sheets"></p><h1 data-i18n="tab_voice_title">Speak your inventory</h1><p data-i18n="hdr_voice">Say what you see — “cooler: ground beef 14 pounds, cheese 6”. Review, fix, save.</p></header>
+      <div class="workbook-tabs" role="tablist" data-tabs="sheets"></div>
+      <div id="voice-root"></div>
+    </section>
+    <section id="view-orders" class="view hidden" data-group="sheets">
+      <header class="view-header"><p class="view-eyebrow" data-i18n="nav_sheets"></p><h1 data-i18n="tab_orders_title">Purchase orders</h1><p data-i18n="hdr_orders">Turn the order list into POs, send them your way, receive them.</p></header>
+      <div class="workbook-tabs" role="tablist" data-tabs="sheets"></div>
+      <div id="orders-root"></div>
+    </section>
+    <section id="view-starter" class="view hidden" data-group="sheets">
+      <header class="view-header"><p class="view-eyebrow" data-i18n="nav_sheets"></p><h1 data-i18n="tab_starter_title">Starter product list</h1><p data-i18n="hdr_starter">A few hundred common food-truck products. No prices — you add yours.</p></header>
+      <div class="workbook-tabs" role="tablist" data-tabs="sheets"></div>
+      <div id="starter-root"></div>
+    </section>
+    <section id="view-invoice" class="view hidden" data-group="inputs">
+      <header class="view-header"><p class="view-eyebrow" data-i18n="nav_inputs"></p><h1 data-i18n="tab_invoice_title">Invoice / bulk receive</h1><p data-i18n="hdr_invoice">Paste invoice lines or add rows, check matches, receive in one go.</p></header>
+      <div class="workbook-tabs" role="tablist" data-tabs="inputs"></div>
+      <div id="invoice-root"></div>
+    </section>
+    <section id="view-log" class="view hidden" data-group="inputs">
+      <header class="view-header"><p class="view-eyebrow" data-i18n="nav_inputs"></p><h1 data-i18n="tab_log_title">Input log</h1><p data-i18n="hdr_log">Everything that changed stock: POS, invoices, orders, transfers.</p></header>
+      <div class="workbook-tabs" role="tablist" data-tabs="inputs"></div>
+      <div id="log-root"></div>
+    </section>
+    <section id="view-money" class="view hidden" data-group="reports">
+      <header class="view-header"><p class="view-eyebrow" data-i18n="nav_reports"></p><h1 data-i18n="tab_money_title">Money & stock</h1><p data-i18n="hdr_money">Stock value, food cost %, count history and exports.</p></header>
+      <div class="workbook-tabs" role="tablist" data-tabs="reports"></div>
+      <div id="money-root"></div>
+    </section>
+    <section id="view-trucks" class="view hidden" data-group="inhouse">
+      <header class="view-header"><p class="view-eyebrow" data-i18n="nav_inhouse"></p><h1 data-i18n="tab_trucks_title">Trucks</h1><p data-i18n="hdr_trucks">Run more than one truck. Move stock between them.</p></header>
+      <div class="workbook-tabs" role="tablist" data-tabs="inhouse"></div>
+      <div id="trucks-root"></div>
+    </section>
+    <section id="view-board" class="view hidden" data-group="inhouse">
+      <header class="view-header"><p class="view-eyebrow" data-i18n="nav_inhouse"></p><h1 data-i18n="tab_board_title">Staff board</h1><p data-i18n="hdr_board">Notes for the crew.</p></header>
+      <div class="workbook-tabs" role="tablist" data-tabs="inhouse"></div>
+      <div id="board-root"></div>
+    </section>
+    <section id="view-people" class="view hidden" data-group="setup">
+      <header class="view-header"><p class="view-eyebrow" data-i18n="nav_settings"></p><h1 data-i18n="tab_people_title">People & access</h1><p data-i18n="hdr_people">Logins with a 6-digit PIN. Pick what each person can do.</p></header>
+      <div class="workbook-tabs" role="tablist" data-tabs="setup"></div>
+      <div id="people-root"></div>
+    </section>
+    <section id="view-sections" class="view hidden" data-group="setup">
+      <header class="view-header"><p class="view-eyebrow" data-i18n="nav_settings"></p><h1 data-i18n="tab_sections_title">Truck sections</h1><p data-i18n="hdr_sections">The places you keep things, in the order you walk them.</p></header>
+      <div class="workbook-tabs" role="tablist" data-tabs="setup"></div>
+      <div id="sections-root"></div>
+    </section>
+    <section id="view-counttypes" class="view hidden" data-group="setup">
+      <header class="view-header"><p class="view-eyebrow" data-i18n="nav_settings"></p><h1 data-i18n="ct_title">Count types</h1><p data-i18n="ct_hdr">Daily, weekly and monthly counts — and what each one covers.</p></header>
+      <div class="workbook-tabs" role="tablist" data-tabs="setup"></div>
+      <div id="counttypes-root"></div>
+    </section>
+    <section id="view-ai" class="view hidden" data-group="setup">
+      <header class="view-header"><p class="view-eyebrow" data-i18n="nav_settings"></p><h1 data-i18n="tab_ai_title">Optional AI</h1><p data-i18n="hdr_ai">Only if you want it: read invoice photos and build shelves from a picture.</p></header>
+      <div class="workbook-tabs" role="tablist" data-tabs="setup"></div>
+      <div id="ai-root"></div>
+    </section>
+    <section id="view-vendors" class="view hidden" data-group="setup">
+      <header class="view-header"><p class="view-eyebrow" data-i18n="nav_settings"></p><h1 data-i18n="tab_vendors_title">Vendor accounts</h1><p data-i18n="hdr_vendors">Who you buy from, your account #, cutoffs and delivery days.</p></header>
+      <div class="workbook-tabs" role="tablist" data-tabs="setup"></div>
+      <div id="vendors-root"></div>
+    </section>
+    <section id="view-accounts" class="view hidden" data-group="setup">
+      <header class="view-header"><p class="view-eyebrow" data-i18n="nav_settings"></p><h1 data-i18n="tab_accounts_title">Categories & POS accounts</h1><p data-i18n="hdr_accounts">GL codes, food-cost targets, and the POS registers you import from.</p></header>
+      <div class="workbook-tabs" role="tablist" data-tabs="setup"></div>
+      <div id="accounts-root"></div>
+    </section>
+    <section id="view-data" class="view hidden" data-group="setup">
+      <header class="view-header"><p class="view-eyebrow" data-i18n="nav_settings"></p><h1 data-i18n="tab_data_title">Backups & data</h1><p data-i18n="hdr_data">Back up, restore, sample data, reset.</p></header>
+      <div class="workbook-tabs" role="tablist" data-tabs="setup"></div>
+      <div id="data-root"></div>
+    </section>
+    <section id="view-library" class="view hidden" data-group="setup">
+      <header class="view-header"><p class="view-eyebrow" data-i18n="nav_settings"></p><h1 data-i18n="library_title">Library</h1><p data-i18n="hdr_library">The full manual for this program. Search it, follow a path, or ask Help.</p></header>
+      <div class="workbook-tabs" role="tablist" data-tabs="setup"></div>
+      <div id="library-root"></div>
+    </section>
+    <section id="view-onboarding" class="view hidden" data-group="onboarding"><div id="onboarding-root"></div></section>
+    <section id="view-login" class="view hidden" data-group="login"><div id="login-root"></div></section>
+  </main>
+  </div>
+
+  <p class="footer-note"><img src="/static/img/truck-small.webp" alt="" width="90" height="55" /> OSFT · local-first · GPLv3 — <span data-i18n="example_note">Items marked EXAMPLE are demo data.</span></p>
+  <script src="/static/js/v1.js"></script>
+  <script src="/static/js/v11.js"></script>
+  <script src="/static/js/v13.js"></script>
+  <script src="/static/js/app.js"></script>
+  <script src="/static/js/library.js"></script>
+  <script src="/static/js/promo.js"></script>
+  <div id="promo-modal" class="promo-modal hidden" role="dialog" aria-modal="true" aria-labelledby="promo-modal-title" aria-describedby="promo-modal-body">
+    <div class="promo-modal-card card">
+      <button type="button" class="promo-x" id="promo-close-x" aria-label="Close">&times;</button>
+      <h2 id="promo-modal-title" data-i18n="promo_pop_title">Thank you for using Open Source Food Truckin'!</h2>
+      <a class="promo-logo-link" href="https://www.reservationrelief.com/" target="_blank" rel="noopener noreferrer"><img class="promo-rr-logo" src="/static/img/reservation-relief-logo.png" alt="Reservation Relief" width="300" height="54"></a>
+      <div id="promo-modal-body">
+        <p data-i18n-html="promo_pop_p1"></p>
+        <p data-i18n-html="promo_pop_p2"></p>
+        <p class="promo-pop-cta" data-i18n="promo_pop_p3">Please check us out.</p>
+      </div>
+      <div class="sister-promo-actions">
+        <a class="btn btn-primary" href="https://www.reservationrelief.com/" target="_blank" rel="noopener noreferrer" data-i18n="promo_link_rr">Visit Reservation Relief</a>
+        <a class="btn" href="https://intelligenthospitalitysystems.com/" target="_blank" rel="noopener noreferrer" data-i18n="promo_link_ihs">Visit IHS</a>
+      </div>
+      <div class="promo-modal-foot">
+        <label class="promo-dont"><input type="checkbox" id="promo-dont-show"> <span data-i18n="promo_dont">Do not open again</span></label>
+        <button type="button" class="btn btn-primary" id="promo-close" data-i18n="promo_close">Close</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

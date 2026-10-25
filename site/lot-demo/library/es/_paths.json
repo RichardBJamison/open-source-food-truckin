@@ -1,0 +1,12 @@
+{ "title": "Aprende Open Source Food Truckin'",
+  "intro": "Todo lo que tú y tu equipo necesitan para manejar el programa, desde el primer recorrido del camión hasta el costo de comida en dólares. Busca cualquier palabra, sigue una ruta o pregúntale a Ayuda en la esquina.",
+  "paths": [
+  { "title": "Dueño nuevo: primera hora", "blurb": "De un programa vacío a tu primer conteo.", "items": ["welcome", "setup/how-setup-works", "setup/step-2-sections", "setup/pass-1-walk-and-map", "setup/reconcile", "setup/approve-the-map-and-first-count"] },
+  { "title": "Día de conteo", "blurb": "Recórrelo, dilo, guárdalo.", "items": ["counting/start-a-count", "counting/walk-the-truck", "voice/speak-your-inventory", "voice/check-what-we-heard", "count-types/the-three-types"] },
+  { "title": "Comprar y recibir", "blurb": "Pide lo que falta y recíbelo bien.", "items": ["ordering/the-order-list", "ordering/purchase-orders", "receiving/log-a-delivery", "receiving/read-an-invoice-with-ai-optional", "receiving/many-lines-at-once"] },
+  { "title": "Conoce tu costo de comida", "blurb": "Ventas, platillos y variación en dólares.", "items": ["pos-sales/export-from-your-pos", "pos-sales/import-it", "menu-costing/add-a-plate", "menu-costing/ingredients", "reports/sales-vs-counts", "reports/money"] },
+  { "title": "A la calle", "blurb": "Paradas, listas de carga y más camiones.", "items": ["stops/stop-types", "stops/tomorrow-s-load-list", "trucks-crew/trucks", "trucks-crew/transfers"] },
+  { "title": "Manejar un equipo", "blurb": "Usuarios, roles y el tablero.", "items": ["people/open-mode", "people/roles", "people/add-someone", "count-types/who-can-start-which-count", "trucks-crew/crew-board"] },
+  { "title": "Conecta tu IA", "blurb": "Lectura de facturas opcional y un tutor personal.", "items": ["ai/you-don-t-need-ai", "ai/what-ai-does-here", "ai/set-it-up", "ai/cost-and-privacy"] },
+  { "title": "Algo se ve mal", "blurb": "Arreglos rápidos.", "items": ["troubleshooting", "troubleshooting/variance-looks-huge", "troubleshooting/the-mic-doesn-t-listen", "data/backups"] }
+] }

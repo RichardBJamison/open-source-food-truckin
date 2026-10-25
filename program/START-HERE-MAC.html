@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Start here (Mac) — Open Source Food Truckin'</title>
+<style>
+  body { margin: 0; background: #0c1228; color: #f3ead6; font: 17px/1.55 -apple-system, "Segoe UI", Roboto, sans-serif; }
+  main { max-width: 720px; margin: 0 auto; padding: 40px 20px 60px; }
+  h1 { color: #e0b04a; font-size: 1.9rem; margin: 0 0 .3em; }
+  h2 { color: #3ff0e0; font-size: 1.15rem; margin: 2em 0 .5em; }
+  p, li { color: #e6dcc6; }
+  ol { padding-left: 1.3em; } li { margin: .45em 0; }
+  code, kbd { background: #1c2547; color: #f6e2b8; padding: 2px 7px; border-radius: 4px; font: 15px ui-monospace, Menlo, monospace; }
+  .box { background: #151d3d; border: 2px solid #e0b04a; border-radius: 10px; padding: 16px 20px; margin: 18px 0; }
+  .es { border-top: 1px solid #2c375f; margin-top: 3em; padding-top: 1.5em; }
+  a { color: #3ff0e0; }
+</style>
+</head>
+<body><main>
+  <h1>Open Source Food Truckin' — Mac install</h1>
+  <p>Free, local, yours. About two minutes.</p>
+
+  <div class="box"><b>The short version:</b> double-click <code>Install.command</code> in this folder.
+  A Terminal window sets everything up and opens the program in your browser at
+  <code>http://127.0.0.1:5053/</code>. Bookmark that page — that bookmark is the software.</div>
+
+  <h2>If your Mac says it “can't be opened” or “Apple could not verify” it</h2>
+  <p>That's normal for free software downloaded from a website (we're not an App Store app). Do this once:</p>
+  <ol>
+    <li>Click <b>Done</b> (or Cancel) on the warning.</li>
+    <li>Open <b>System Settings → Privacy &amp; Security</b>, scroll down, and click <b>Open Anyway</b> next to “Install.command was blocked”.</li>
+    <li>Double-click <code>Install.command</code> again and click <b>Open Anyway</b> / <b>Open</b>.</li>
+  </ol>
+  <p>Older macOS (14 and earlier): right-click <code>Install.command</code> → <b>Open</b> → <b>Open</b>.</p>
+
+  <h2>Or skip the warning entirely (Terminal)</h2>
+  <ol>
+    <li>Open <b>Terminal</b> (Applications → Utilities).</li>
+    <li>Type <code>bash </code> (with a space), drag <code>Install.command</code> from this folder into the window, press <kbd>Return</kbd>.</li>
+  </ol>
+
+  <h2>If it asks for “command line developer tools”</h2>
+  <p>Your Mac is offering to install Python. Click <b>Install</b>, wait for it to finish, then run <code>Install.command</code> again.</p>
+
+  <h2>After install</h2>
+  <ul>
+    <li>The program lives in your home folder: <code>osft-program</code>. You can delete this download folder.</li>
+    <li>It starts by itself when you log in. <code>Start.command</code> / <code>Stop.command</code> are in <code>osft-program</code>.</li>
+    <li>Updating: download the new version and run its <code>Install.command</code>. Your data stays.</li>
+    <li>Phone on the same Wi-Fi: see <code>README-INSTALL.txt</code>.</li>
+  </ul>
+
+  <div class="es" lang="es">
+    <h1>Instalación en Mac</h1>
+    <div class="box">Haz doble clic en <code>Install.command</code>. Se abre el programa en <code>http://127.0.0.1:5053/</code>. Guarda esa página en favoritos: ese favorito es el software.</div>
+    <h2>Si tu Mac dice que no se puede abrir</h2>
+    <ol>
+      <li>Haz clic en <b>OK / Cancelar</b>.</li>
+      <li>Abre <b>Ajustes del Sistema → Privacidad y seguridad</b> y haz clic en <b>Abrir igualmente</b>.</li>
+      <li>Vuelve a hacer doble clic en <code>Install.command</code> y elige <b>Abrir</b>.</li>
+    </ol>
+    <p>O en <b>Terminal</b>: escribe <code>bash </code>, arrastra <code>Install.command</code> a la ventana y pulsa <kbd>Return</kbd>.</p>
+    <p>Si pide instalar “herramientas de desarrollo”, haz clic en <b>Instalar</b> y luego corre <code>Install.command</code> otra vez.</p>
+  </div>
+</main></body>
+</html>

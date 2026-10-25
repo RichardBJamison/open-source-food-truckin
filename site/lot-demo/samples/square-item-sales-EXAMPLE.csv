@@ -1,0 +1,4 @@
+Date,Time,Time Zone,Category,Item,Qty,Price Point Name,SKU,Modifiers Applied,Gross Sales,Discounts,Net Sales,Tax,Transaction ID,Payment ID,Device Name,Notes,Details,Event Type,Location,Dining Option,Customer ID,Customer Name,Customer Reference ID,Unit,Count,Itemization Type,Fulfillment Note,Channel,Token,Card Brand,PAN Suffix
+10/23/2026,12:05:11,Eastern Time (US & Canada),Tacos,Beef Taco,3,Regular,,,$10.50,$0.00,$10.50,$0.76,EXAMPLE1,,Truck iPad,,,Payment,EXAMPLE Truck,,,,,ea,1,Physical Item,,Square Point of Sale,,,
+10/23/2026,12:09:40,Eastern Time (US & Canada),Burritos,Chicken Burrito,1,Regular,,,$11.00,$0.00,$11.00,$0.80,EXAMPLE2,,Truck iPad,,,Payment,EXAMPLE Truck,,,,,ea,1,Physical Item,,Square Point of Sale,,,
+10/23/2026,12:15:02,Eastern Time (US & Canada),Tacos,Carnitas Taco,2,Regular,,,$7.50,($1.00),$6.50,$0.47,EXAMPLE3,,Truck iPad,,,Payment,EXAMPLE Truck,,,,,ea,1,Physical Item,,Square Point of Sale,,,

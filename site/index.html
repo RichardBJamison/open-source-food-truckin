@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en" translate="no">
+<head>
+  <meta charset="utf-8" />
+  <meta name="google" content="notranslate" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#1a120c" />
+  <meta name="description" content="Free, open-source food-truck inventory that runs on your own laptop. Counts by zone, POS import, plate costing, load lists — no subscription, no account, no cloud lock-in." />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Open Source Food Truckin'" />
+  <meta property="og:title" content="Open Source Food Truckin' — Free Food Truck Inventory Built by Operators" />
+  <meta property="og:description" content="Free, open-source food-truck inventory that runs on your own laptop. Counts by zone, POS import, plate costing, load lists — no subscription, no account, no cloud lock-in." />
+  <meta property="og:image" content="https://osfoodtrucking.com/img/og-card.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Open Source Food Truckin' — a night food truck, 100% free and bilingual" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://osfoodtrucking.com/img/og-card.jpg" />
+  <title data-i18n="title_home">Open Source Food Truckin' — Free Food Truck Inventory Built by Operators</title>
+  <link rel="icon" href="img/gear.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="fonts/fonts.css?v=2" />
+  <link rel="stylesheet" href="css/site.css?v=30" />
+  <script src="/js/i18n-v11.js"></script>
+  <script>
+    (function () {
+      var lang = "en";
+      try {
+        var q = /(?:^|[?&])lang=(en|es)(?:&|$)/.exec(location.search);
+        if (q) lang = q[1];
+        else {
+          var s = localStorage.getItem("osft_lang");
+          if (s === "es" || s === "en") lang = s;
+          else {
+            var m = document.cookie.match(/(?:^|;\s*)osft_lang=(en|es)(?:;|$)/);
+            if (m) lang = m[1];
+          }
+        }
+      } catch (e) {}
+      document.documentElement.lang = lang;
+      if (lang === "es") document.documentElement.classList.add("osft-i18n-wait");
+      setTimeout(function () { document.documentElement.classList.remove("osft-i18n-wait"); }, 2000);
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main" data-i18n="skip">Skip to content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="">
+        <img class="brand-truck" src="img/header-truck.webp" width="220" height="160" alt="" />
+        <span class="brand-copy">
+          <span class="brand-name">Open Source Food Truckin'</span>
+          <span class="brand-tag" data-i18n="brand_tag">The mobile kitchen inventory system, proudly part of the Open Source Barware family.</span>
+        </span>
+      </a>
+      <nav class="nav" id="site-nav" aria-label="Primary">
+        <a href="" class="is-here" data-i18n="nav_home">Home</a>
+        <a href="the-process/"><span data-i18n="nav_process">The Process</span><small data-i18n="nav_process_s">Walk the truck</small></a>
+        <a href="about/"><span data-i18n="nav_about">About</span><small data-i18n="nav_about_s">The Truck Stop</small></a>
+        <a href="resources/"><span data-i18n="nav_res">Resources</span><small data-i18n="nav_res_s">Mobile Menu</small></a>
+        <a href="inventory/dashboard/"><span data-i18n="nav_demo">Live Demo</span><small data-i18n="nav_demo_s">The Lot</small></a>
+        <a href="download/" class="nav-cta" data-i18n="nav_dl">Download Program</a>
+      </nav>
+      <div class="header-end">
+        <div class="lang" role="group" aria-label="Language">
+          <button type="button" data-locale="en" class="is-on" aria-pressed="true">EN</button>
+          <button type="button" data-locale="es" aria-pressed="false">ES</button>
+        </div>
+        <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="site-nav">
+          <span></span><span></span><span></span>
+          <span class="sr" data-i18n="menu">Menu</span>
+        </button>
+      </div>
+    </div>
+  </header>
+  <section class="poster" aria-label="Hero">
+    <video class="poster-art" autoplay muted loop playsinline preload="auto" poster="img/hero-header-poster.jpg" width="1280" height="720" disablepictureinpicture aria-hidden="true">
+      <source src="video/hero-header.mp4" type="video/mp4" />
+    </video>
+    <div class="poster-shade" aria-hidden="true"></div>
+    <div class="poster-right">
+      <div class="poster-copy">
+        <h1>
+          <span data-i18n="hero_h1">The real truck problem,</span>
+          <span data-i18n="hero_h2">solved on the go.</span>
+        </h1>
+        <p class="hero-lead" data-i18n="hero_p">Tame the chaos of a rolling kitchen. From the same house as Open Source Barware: track supplies, pull last night’s POS, cost every plate, and print a load list — festival lot or street corner.</p>
+        <p class="hero-find" data-i18n="hero_find">Find this and the bar tools at OpenSourceBarware.com.</p>
+        <div class="hero-actions">
+          <a class="btn btn-gold" href="download/" data-i18n="cta_app">Download Program</a>
+          <a class="btn btn-teal" href="the-process/" data-i18n="cta_menu">Learn this system</a>
+          <a class="btn btn-teal" href="about/" data-i18n="cta_story">Read our story</a>
+        </div>
+      </div>
+      <div class="poster-notes">
+        <article class="sticker">
+          <img class="sticker-gauge" src="img/gauge.webp" width="160" height="160" alt="" />
+          <div>
+            <p class="sticker-kicker" data-i18n="asphalt_kicker">Waste-o-meter</p>
+            <h2 data-i18n="asphalt_h">Built on the asphalt</h2>
+            <p data-i18n="asphalt_note">Same kitchen that made Open Source Barware. This one just has a parking brake.</p>
+          </div>
+        </article>
+        <article class="launch-note">
+          <img class="launch-globe" src="img/globe.webp" width="180" height="180" alt="" />
+          <div>
+            <h2 data-i18n="launch_h">Global launch</h2>
+            <p data-i18n="launch_p">Launching for the whole crew. Food Truckin' for the rolling kitchen, Barware for the well. Fully bilingual in English and Spanish.</p>
+            <p class="launch-es" data-i18n="launch_es">¡Disponible en español! Completamente bilingüe.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="free-band" id="free">
+    <div class="free-banner">
+      <div class="free-copy">
+        <h2 data-i18n="free_h">100% free &amp; bilingual</h2>
+        <p data-i18n="free_p">Free and open source under GPLv3. Runs on your own computer. No subscription, ever. The whole crew can work in English or Spanish.</p>
+      </div>
+      <img class="free-pig" src="img/seal.webp" width="140" height="140" alt="" />
+      <img class="free-truck" src="img/truck-small.webp" width="200" height="120" alt="" />
+      <img class="free-stamp" src="img/free-seal.webp" width="150" height="150" alt="100% free" />
+    </div>
+  </section>
+
+  <section class="stats-strip" aria-label="At a glance">
+    <div class="stat"><b>$0</b><span data-i18n="stat_cost">Cost</span></div>
+    <div class="stat"><b>1</b><span data-i18n="stat_prog">Free program</span></div>
+    <div class="stat"><b>3</b><span data-i18n="stat_steps">Easy steps</span><small data-i18n="stat_steps_s">Each week</small></div>
+    <div class="stat"><b>100%</b><span data-i18n="stat_simple">Simple</span><small data-i18n="stat_simple_s">Add data. Get inventory.</small></div>
+  </section>
+
+  <main id="main">
+    <section class="problem">
+      <p class="kicker" style="justify-content:center" data-i18n="prob_k">The Problem</p>
+      <h2 data-i18n="prob_h">Every truck operator knows the drill.</h2>
+      <p data-i18n="prob_p1">End of the night. Generator still running. Count the cooler by flashlight. Guess the freezer. Scribble numbers on a ticket pad. Walk to the laptop in the cab. Type it into a spreadsheet someone made in 2019. Try to reconcile against last night’s Square or Toast export. Watch it never add up. Text the prep cook tomorrow’s load list. Repeat.</p>
+      <p data-i18n="prob_p2">Brick-and-mortar restaurants have been sold $249-a-month inventory platforms and invoice scanners built for four walls. Trucks get the leftover: a clipboard, a group chat, and a hope that the ice cream doesn’t thaw before Saturday’s festival.</p>
+      <p class="punch" data-i18n="prob_punch">AI changed everything. Now we can build this program for free. So we did.</p>
+      <p class="kicker" style="justify-content:center;margin-top:2rem" data-i18n="prob_time">Get your time back</p>
+    </section>
+
+    <section class="workshop">
+      <div class="wrap">
+        <p class="kicker" data-i18n="work_k">The Workshop</p>
+        <h2 class="display" data-i18n="work_h">Precision instruments for the rolling craft.</h2>
+        <p class="lede" data-i18n="work_lede">One free program. The full workflow lives inside it — Home base, inventory sheets, reports, on the truck, all inputs, menu costing, stops and load lists.</p>
+        <div class="instruments">
+          <div class="instrument"><span class="num">01</span><h3 data-i18n="inst1_h">Smart inventory sheets</h3><p data-i18n="inst1_p">Count sheet, variance, order list, and product master — cooler, freezer, dry, prep — with PAR, pack size, vendor, and Spanish names.</p></div>
+          <div class="instrument"><span class="num">02</span><h3 data-i18n="inst2_h">Variance vs. POS sales</h3><p data-i18n="inst2_p">What you should have used from Square, Toast, Clover, or any CSV, against what the counts say you used.</p></div>
+          <div class="instrument"><span class="num">03</span><h3 data-i18n="inst3_h">Optional invoice photos</h3><p data-i18n="inst3_p">Type invoice lines yourself — or connect your own AI key to read paper invoice photos and PDFs. Off by default.</p></div>
+          <div class="instrument"><span class="num">04</span><h3 data-i18n="inst4_h">380-product starter list</h3><p data-i18n="inst4_p">Common food-truck products with units and pack sizes. No prices stuffed in — you enter what you actually pay.</p></div>
+        </div>
+        <p style="margin-top:1rem"><a class="btn btn-gold" href="download/" data-i18n="cta_app">Download Program</a></p>
+        <p style="margin-top:1.2rem;color:var(--muted);font-size:.95rem" data-i18n-html="work_track">Tracking one part of the truck? <a href="truck-inventory/">Truck &amp; cooler inventory</a> · <a href="prep-inventory/">Prep inventory</a></p>
+      </div>
+    </section>
+
+    <section class="quote-band">
+      <blockquote data-i18n="quote">“If you help enough people get what they need, the universe will provide what you need.”</blockquote>
+      <cite data-i18n="quote_cite">— The philosophy behind Open Source Barware, and this sister program</cite>
+      <p class="kicker" style="justify-content:center;margin-top:2.4rem" data-i18n="start_k">Get Started</p>
+      <h2 class="display" data-i18n="start_h">Open the program. Start tonight.</h2>
+      <p class="lede" style="margin:0 auto 0;text-align:center;text-shadow:none;color:var(--muted)" data-i18n="start_lede">No signup. No email capture. No sales pitch. Download the program and get to work — or play in The Lot first.</p>
+      <div class="cta-row">
+        <a class="btn btn-gold" href="download/" data-i18n="cta_app">Download Program</a>
+        <a class="btn btn-teal" href="inventory/dashboard/" data-i18n="cta_demo">Live Demo</a>
+        <a class="btn btn-teal" href="resources/" data-i18n="cta_res">Explore community resources</a>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div class="foot-brand">
+          <p data-i18n="foot_brand_1">Crafted for rolling kitchens. Given to the trade, no strings attached. Sister program to Open Source Barware — same house, a parking brake.</p>
+          <p data-i18n="foot_brand_2">A Richard B. Jamison project. Free forever.</p>
+        </div>
+        <div class="foot-col">
+          <h3 data-i18n="foot_nav">Navigate</h3>
+          <a href="" data-i18n="nav_home">Home</a>
+          <a href="the-process/" data-i18n="nav_process">The Process</a>
+          <a href="about/" data-i18n="nav_about">About</a>
+          <a href="manifesto/" data-i18n="nav_manifesto">Manifesto</a>
+          <a href="resources/" data-i18n="nav_res">Resources</a>
+          <a href="blog/" data-i18n="nav_blog">Blog</a>
+          <a href="download/" data-i18n="nav_dl">Download Program</a>
+          <a href="downloads/" data-i18n="nav_guide">Program Guide</a>
+          <a href="open-source-compliance/" data-i18n="nav_compliance">Compliance</a>
+          <a href="inventory/dashboard/" data-i18n="nav_demo">Live Demo</a>
+          <a href="changelog/" data-i18n="nav_notes">Release notes</a>
+        </div>
+        <div class="foot-col">
+          <h3 data-i18n="foot_inv">Free Inventory</h3>
+          <a href="free-food-truck-inventory-software/" data-i18n="foot_seo_ft">Food Truck Inventory Software</a>
+          <a href="truck-inventory/" data-i18n="foot_seo_truck">Truck &amp; Cooler Inventory</a>
+          <a href="prep-inventory/" data-i18n="foot_seo_prep">Prep Inventory</a>
+          <a href="food-truck-inventory-software-comparison/" data-i18n="foot_seo_cmp">Compare Alternatives</a>
+          <h3 style="margin-top:1.4rem" data-i18n="foot_workshop">Workshop</h3>
+          <p data-i18n-html="foot_workshop_p">From <a href="https://intelligenthospitalitysystems.com/">Intelligent Hospitality Systems</a>. Also from us: <a href="https://www.reservationrelief.com/">Reservation Relief</a>, reservations on the website you already own.</p>
+          <p data-i18n-html="foot_resonant">Web &amp; systems notes: <a href="https://resonantwebdesign.com/industries/restaurants-hospitality-web-design/" rel="noopener noreferrer">Resonant</a></p>
+        </div>
+      </div>
+      <p class="foot-legal">© 2026 Open Source Food Truckin' — <span data-i18n="foot_legal">All the program is free and open source under GPLv3</span> · <a href="open-source-compliance/" data-i18n="nav_license">License and source</a> · <a href="privacy/" data-i18n="nav_privacy">Privacy</a> · <a href="terms/" data-i18n="nav_terms">Terms</a></p>
+    </div>
+  </footer>
+  <script>
+    window.OFFER_TRACKER = {
+      siteId: "osft-landing",
+      ga4Id: "",
+      endpoint: "https://opensourcebarware.com/api/nexus-collect",
+      clarityId: "",
+      debug: false
+    };
+  </script>
+  <script src="/js/tracker.js?v=2" defer></script>
+  <script src="/js/site-v11.js"></script>
+</body>
+</html>

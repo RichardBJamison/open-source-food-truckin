@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en" translate="no">
+<head>
+  <meta charset="utf-8" />
+  <meta name="google" content="notranslate" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#1a120c" />
+  <meta name="description" content="How free food-truck inventory software works: voice walk, zones, variance, POS, load lists — local-first, no subscription. Full Open Source Food Truckin' process." />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Open Source Food Truckin'" />
+  <meta property="og:title" content="How Free Food Truck Inventory Works (Voice Walk → Count) | Open Source Food Truckin'" />
+  <meta property="og:description" content="How free food-truck inventory software works: voice walk, zones, variance, POS, load lists — local-first, no subscription. Full Open Source Food Truckin' process." />
+  <meta property="og:image" content="https://osfoodtrucking.com/img/og-card.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Open Source Food Truckin' — a night food truck, 100% free and bilingual" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://osfoodtrucking.com/img/og-card.jpg" />
+  <title data-i18n="title_process">How Free Food Truck Inventory Works (Voice Walk → Count) | Open Source Food Truckin'</title>
+  <link rel="icon" href="../img/gear.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="../fonts/fonts.css?v=2" />
+  <link rel="stylesheet" href="../css/site.css?v=30" />
+  <script src="/js/i18n-v11.js"></script>
+  <script>
+    (function () {
+      var lang = "en";
+      try {
+        var q = /(?:^|[?&])lang=(en|es)(?:&|$)/.exec(location.search);
+        if (q) lang = q[1];
+        else {
+          var s = localStorage.getItem("osft_lang");
+          if (s === "es" || s === "en") lang = s;
+          else {
+            var m = document.cookie.match(/(?:^|;\s*)osft_lang=(en|es)(?:;|$)/);
+            if (m) lang = m[1];
+          }
+        }
+      } catch (e) {}
+      document.documentElement.lang = lang;
+      if (lang === "es") document.documentElement.classList.add("osft-i18n-wait");
+      setTimeout(function () { document.documentElement.classList.remove("osft-i18n-wait"); }, 2000);
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main" data-i18n="skip">Skip to content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="../">
+        <img class="brand-truck" src="../img/header-truck.webp" width="220" height="160" alt="" />
+        <span class="brand-copy">
+          <span class="brand-name">Open Source Food Truckin'</span>
+          <span class="brand-tag" data-i18n="brand_tag">The mobile kitchen inventory system, proudly part of the Open Source Barware family.</span>
+        </span>
+      </a>
+      <nav class="nav" id="site-nav" aria-label="Primary">
+        <a href="../" data-i18n="nav_home">Home</a>
+        <a href="../the-process/" class="is-here"><span data-i18n="nav_process">The Process</span><small data-i18n="nav_process_s">Walk the truck</small></a>
+        <a href="../about/"><span data-i18n="nav_about">About</span><small data-i18n="nav_about_s">The Truck Stop</small></a>
+        <a href="../resources/"><span data-i18n="nav_res">Resources</span><small data-i18n="nav_res_s">Mobile Menu</small></a>
+        <a href="../inventory/dashboard/"><span data-i18n="nav_demo">Live Demo</span><small data-i18n="nav_demo_s">The Lot</small></a>
+        <a href="../download/" class="nav-cta" data-i18n="nav_dl">Download Program</a>
+      </nav>
+      <div class="header-end">
+        <div class="lang" role="group" aria-label="Language">
+          <button type="button" data-locale="en" class="is-on" aria-pressed="true">EN</button>
+          <button type="button" data-locale="es" aria-pressed="false">ES</button>
+        </div>
+        <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="site-nav">
+          <span></span><span></span><span></span>
+          <span class="sr" data-i18n="menu">Menu</span>
+        </button>
+      </div>
+    </div>
+  </header>
+  <section class="page-hero" aria-label="Hero">
+    <img class="page-hero-art" src="../img/hero-process.webp" alt="Inside a food truck at night, cooler open, a silhouette walking a count with a phone." width="1600" height="900" />
+    <div class="page-hero-shade" aria-hidden="true"></div>
+    <div class="wrap">
+      <p class="kicker" data-i18n="proc_kicker">The Kitchen Table Version</p>
+      <h1 class="display" data-i18n-html="proc_h1">One local program.<br>Simple to start. Industrial strength when needed.</h1>
+      <p class="lede" data-i18n="proc_lede">Install it, bookmark one page in the browser, and that page becomes your whole system. Starts as an easy guided walkthrough — walk or talk your inventory in (English, Spanish, or mixed). Grows into the most complete free food-truck inventory program we know how to ship.</p>
+      
+    </div>
+  </section>
+  <main id="main">
+    <section class="copy band-warm">
+      <div class="wrap">
+        <p class="kicker" data-i18n="proc_big_k">The Big Picture</p>
+        <h2 class="display" data-i18n="proc_big_h">What you are actually using</h2>
+        <p class="lede" data-i18n="proc_big_lede">One calm control panel that runs on your laptop. Starts simple for the average operator — walk or talk the truck in, easy and fast. Grows into the industrial-strength toolkit: voice, count types, POS, recipes, load lists, multi-truck, crew PINs.</p>
+        <div class="blocks-3" style="margin-top:2rem">
+          <article class="panel"><p class="tag" data-i18n="proc_tag_one">One Program</p><h3 data-i18n="proc_one_h">One browser-side program</h3><p data-i18n="proc_one_p">You open one place. It starts simple (walk or talk inventory in, English, Spanish, or mixed), then grows into the full system — zones, scales of pack size, and pinpoint counts built in.</p></article>
+          <article class="panel"><p class="tag" data-i18n="proc_tag_change">The Changeover</p><h3 data-i18n="proc_change_h">Caterpillar to butterfly</h3><p data-i18n="proc_change_p">At first it feels like a guided checklist. After the truck is mapped, the same page opens into Home base: sheets, reports, inputs, menu, stops, settings.</p></article>
+          <article class="panel"><p class="tag" data-i18n="proc_tag_spine">The Spine</p><h3 data-i18n="proc_spine_h">Your voice in, a built map out</h3><p data-i18n="proc_spine_p">You talk (or walk) the truck the way you already walk it. A parser on your laptop — no internet, no AI, no account — reads your words, lays out the map, and does the math.</p></article>
+        </div>
+        <div class="blocks-2" style="margin-top:1.4rem">
+          <div class="panel">
+            <p class="tag" data-i18n="proc_inside_k">Inside the Home Base</p>
+            <div class="home-mods">
+              <div><h4 data-i18n="proc_mod_home_h">Home base</h4><p data-i18n="proc_mod_home_p">Last count, current cycle, what’s below PAR, jump-to cards, sample taco truck.</p></div>
+              <div><h4 data-i18n="proc_mod_sheets_h">Inventory sheets</h4><p data-i18n="proc_mod_sheets_p">Count sheet, variance, order list, product master — the workbook view.</p></div>
+              <div><h4 data-i18n="proc_mod_truck_h">On the truck</h4><p data-i18n="proc_mod_truck_p">Zones, extra trucks, transfers, crew board. Cooler · freezer · dry · prep.</p></div>
+              <div><h4 data-i18n="proc_mod_in_h">All inputs</h4><p data-i18n="proc_mod_in_p">POS sales, invoices &amp; receiving, input log. Square / Toast / Clover / any CSV.</p></div>
+              <div><h4 data-i18n="proc_mod_menu_h">Menu &amp; costing</h4><p data-i18n="proc_mod_menu_p">Plate cost, food-cost %, margin. Recipe qty in the product’s own unit.</p></div>
+              <div><h4 data-i18n="proc_mod_stops_h">Stops &amp; load lists</h4><p data-i18n="proc_mod_stops_p">Lunch lot, brewery, festival — PAR per stop type, printable load list for tomorrow.</p></div>
+            </div>
+          </div>
+          <aside class="panel">
+            <p class="tag" data-i18n="proc_gates_k">Checks and Gates</p>
+            <h3 data-i18n="proc_gates_h">The system slows down where it should — then unlocks full power.</h3>
+            <ul class="gates">
+              <li><b>01</b> <span data-i18n="proc_g1">Everything runs on your laptop — no account, no cloud.</span></li>
+              <li><b>02</b> <span data-i18n="proc_g2">Name every cooler, freezer, dry, prep, window, commissary space.</span></li>
+              <li><b>03</b> <span data-i18n="proc_g3">Ask about unclear brands, pack sizes, duplicates, missing shelves.</span></li>
+              <li><b>04</b> <span data-i18n="proc_g4">Review the first map before the first real inventory count.</span></li>
+              <li><b>05</b> <span data-i18n="proc_g5">Match the weekly count, purchases, and POS report to the same date window.</span></li>
+              <li><b>06</b> <span data-i18n="proc_g6">Add AI later — and only if you want invoice photos read for you.</span></li>
+              <li><b>07</b> <span data-i18n="proc_g7">Layer in daily counts, barcode, POs, multi-truck, crew PINs as you grow.</span></li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="copy">
+      <div class="wrap">
+        <p class="kicker" data-i18n="proc_need_k">Before Setup</p>
+        <h2 class="display" data-i18n="proc_need_h">What you need at the table</h2>
+        <p class="lede" data-i18n="proc_need_lede">Nothing exotic. Just the pieces a real truck already has, gathered into one guided flow.</p>
+        <div class="need-grid" style="margin-top:1.6rem">
+          <article class="need-card"><strong data-i18n="proc_need1_h">A laptop</strong><p data-i18n="proc_need1_p">Python 3.10+ and a browser. Chrome, Edge, or Safari for voice. Typing works everywhere.</p></article>
+          <article class="need-card"><strong data-i18n="proc_need2_h">A phone</strong><p data-i18n="proc_need2_p">Voice notes in English or Spanish — cooler, freezer, dry, prep — naming product as you go. Or count on the phone over Wi-Fi.</p></article>
+          <article class="need-card"><strong data-i18n="proc_need3_h">A first truck walk</strong><p data-i18n="proc_need3_p">That one saved walk is the seed the built-in parser reads to build your whole truck.</p></article>
+          <article class="need-card"><strong data-i18n="proc_need4_h">Invoices + POS</strong><p data-i18n="proc_need4_p">Type or paste invoice lines and pull the Square / Toast / Clover / CSV export once the first cycle is ready.</p></article>
+          <article class="need-card"><strong data-i18n="proc_need5_h">A careful review</strong><p data-i18n="proc_need5_p">The first map gets checked and approved before the program becomes your home base.</p></article>
+          <article class="need-card"><strong data-i18n="proc_need6_h">Optional: your own AI</strong><p data-i18n="proc_need6_p">Not required for anything. Add it only if you want invoice photos read instead of typing.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="copy band-warm">
+      <div class="wrap prose">
+        <p class="kicker" data-i18n="proc_first_k">First Setup</p>
+        <h2 class="display" data-i18n="proc_first_h">How it goes from first walk to home base</h2>
+        <p data-i18n="proc_first_p">The first setup is meant to feel like a guided conversation. Do one thing, check it, then move to the next. Starts simple — the full toolkit is already inside when you need it.</p>
+        <article class="step"><span class="num">01</span><div>
+          <h3 data-i18n="s01_h">Install It and Bookmark It</h3>
+          <p data-i18n="s01_p">Download the package and unzip it. Run the installer (Install.command on Mac, Install.bat on Windows, or python server.py). It opens one browser window at http://127.0.0.1:5053/. Bookmark that window — that bookmark is the software. Everything you build lives inside that one page.</p>
+          <p class="note" data-i18n="s01_n">One install, one bookmark. Come back to the same place every night. Want to count from a phone? Start it with --lan on the truck’s Wi-Fi and open the address it prints.</p>
+          
+        </div></article><article class="step"><span class="num">02</span><div>
+          <h3 data-i18n="s02_h">Meet the Guided Walkthrough</h3>
+          <p data-i18n="s02_p">The first time it opens, you land on the guided walkthrough — the caterpillar. Welcome, optional AI (off by default), or “Load sample taco truck” if you just want to look around. No account, no cloud, no AI required. It walks you through mapping the whole truck one calm step at a time.</p>
+          <p class="note" data-i18n="s02_n">This is the caterpillar stage: patient, offline, focused on getting your truck understood. Later it becomes the butterfly — Home base with the full industrial toolkit.</p>
+          
+        </div></article><article class="step"><span class="num">03</span><div>
+          <h3 data-i18n="s03_h">Name Your Truck</h3>
+          <p data-i18n="s03_p">Step 1 is Your truck: the name on the wrap, weekly / every two weeks / monthly cycle, units. If you run more than one truck later, you add them in Settings. For the first build you name this one plainly.</p>
+          <p class="note" data-i18n="s03_n">The name shows on Home base and on printed load lists. You can rename it anytime.</p>
+          
+        </div></article><article class="step"><span class="num">04</span><div>
+          <h3 data-i18n="s04_h">Lay Out the Sections</h3>
+          <p data-i18n="s04_p">Name the physical places you walk: cooler, freezer, dry, prep — plus extras you turn on (window, commissary, outside, line / make table, lowboy, cab). Two coolers in the truck means two sections in the system. This is the frame you pour everything else into.</p>
+          <p class="note" data-i18n="s04_n">Count the rooms in the rolling kitchen, then name them. Real shelf names come after the first map.</p>
+          
+        </div></article><article class="step"><span class="num">05</span><div>
+          <h3 data-i18n="s05_h">Walk Each Section and Say It Out Loud</h3>
+          <p data-i18n="s05_p">Stand in the truck and vocalize it the way you already walk it. Go section by section, shelf by shelf — say the location, then name what’s in it. Move the same route every time so the map matches the real box. Speak English, Spanish, or mix them. Typing always works if the generator is too loud for a mic.</p>
+          <p class="note" data-i18n="s05_n">This first voice note is the seed. Everything the program builds grows out of this walk, so speak it in order.</p>
+          <div class="walk-ex"><span class="lbl" data-i18n="walk_lbl">How to say the walk — English or Spanish</span>
+Cooler. Shelf one: 40 lb ice, horchata 5 gal, queso 4 lb<br>
+Cuarto frío. Charola uno: hielo 40 lb, horchata 5 gal…<br>
+Freezer: carne asada 10 lb, french fries one case<br>
+Dry: tortillas 4 packs, salsa 12 oz cans<br>
+Prep: pico, cilantro, limes, onions<br>
+Window / make table: only what is on the line tonight</div>
+        </div></article><article class="step"><span class="num">06</span><div>
+          <h3 data-i18n="s06_h">Bring the Invoices</h3>
+          <p data-i18n="s06_p">The walk also takes product invoices — PDF, photos, CSV, or typed lines. You do not have to finish invoices to continue; they merge with what you said on the next step. Photos of invoices need optional AI if you want them read; CSV and typed lines work locally.</p>
+          <p class="note" data-i18n="s06_n">Invoice quantities in setup are not added to stock. The walk count is what’s on the truck. Receiving still happens later in All inputs.</p>
+          
+        </div></article><article class="step"><span class="num">07</span><div>
+          <h3 data-i18n="s07_h">Reconcile — Spoken × Invoices</h3>
+          <p data-i18n="s07_p">Step 4 shows “Here’s what I registered” per section. Tap any row to edit name, section, count, unit, pack, cost, vendor. Merge, link or unlink an invoice line, add a missing product, or park something as commissary-only / not stocked / skip. Nothing saves until Confirm & continue.</p>
+          <p class="note" data-i18n="s07_n">The program does the heavy lifting. The operator approves the truth.</p>
+          
+        </div></article><article class="step"><span class="num">08</span><div>
+          <h3 data-i18n="s08_h">Review the First Map, Then Count</h3>
+          <p data-i18n="s08_p">Approve the map: rename, move, set PAR. Then the first live count, section by section — voice fills the numbers, you save. After that, Home base opens as the butterfly: metrics, jump-to cards, low-PAR alerts.</p>
+          <p class="note" data-i18n="s08_n">Printable count sheets and the on-phone stepper follow the same walking order you spoke the first time.</p>
+          
+        </div></article><article class="step"><span class="num">09</span><div>
+          <h3 data-i18n="s09_h">Lock It — Optional PIN</h3>
+          <p data-i18n="s09_p">Create an owner PIN if you want, or leave it open. People & access (admin / manager / crew, per-permission, truck lock) stay available in Settings. Crew can be limited to daily end-of-shift counts.</p>
+          <p class="note" data-i18n="s09_n">Open until you create the first admin. Same pattern as Open Source Barware.</p>
+          
+        </div></article><article class="step"><span class="num">10</span><div>
+          <h3 data-i18n="s10_h">You Have Full Control — and It's Open Source</h3>
+          <p data-i18n="s10_p">Inside Home base: inventory sheets, reports, on the truck, all inputs, menu & costing, stops & load lists, settings. Daily / weekly / monthly count types. Multiple trucks and transfers. Backups, restore, reset. Because it is open source, nothing is locked away.</p>
+          <p class="note" data-i18n="s10_n">Change the sections, restructure the layout, own the whole thing. Complete access, no lock-in.</p>
+          
+        </div></article>
+      </div>
+    </section>
+
+    <section class="copy">
+      <div class="wrap">
+        <p class="kicker" data-i18n="proc_ai_k">Optional AI</p>
+        <h2 class="display" data-i18n="proc_ai_h">The whole program works without it.</h2>
+        <p class="lede" data-i18n="proc_ai_lede">Connect ChatGPT, Claude, Grok, local Ollama, or any OpenAI-compatible endpoint only if you want invoice photos and PDFs read. Your key stays in data/config.json on this computer and is left out of backups. Skip it now, add it later in Settings, or never touch it.</p>
+        <div class="rhythm" style="margin-top:2rem">
+          <article class="panel"><p class="tag" data-i18n="proc_count_k">Count</p><h3 data-i18n="proc_count_h">Daily, weekly, monthly</h3><p data-i18n="proc_count_p">Daily end-of-shift is a partial watch list. Weekly is the full truck. Monthly adds an extras checklist. Partials never zero what they skip.</p></article>
+          <article class="panel"><p class="tag" data-i18n="proc_add_k">Add</p><h3 data-i18n="proc_add_h">POS, invoices, notes</h3><p data-i18n="proc_add_p">Bring in sales, delivery notes, and manager context for the same period. Barcode and receiving built in. Optional invoice photos if you connect AI.</p></article>
+          <article class="panel"><p class="tag" data-i18n="proc_read_k">Read</p><h3 data-i18n="proc_read_h">Home base story</h3><p data-i18n="proc_read_p">Usage, spend, variance, food cost %, what to buy grouped by vendor, tomorrow’s load list.</p></article>
+        </div>
+        <div class="cta-row">
+          <a class="btn btn-gold" href="../download/" data-i18n="cta_app">Download Program</a>
+          <a class="btn btn-teal" href="../inventory/dashboard/" data-i18n="cta_lot_play">Play in The Lot</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div class="foot-brand">
+          <p data-i18n="foot_brand_1">Crafted for rolling kitchens. Given to the trade, no strings attached. Sister program to Open Source Barware — same house, a parking brake.</p>
+          <p data-i18n="foot_brand_2">A Richard B. Jamison project. Free forever.</p>
+        </div>
+        <div class="foot-col">
+          <h3 data-i18n="foot_nav">Navigate</h3>
+          <a href="../" data-i18n="nav_home">Home</a>
+          <a href="../the-process/" data-i18n="nav_process">The Process</a>
+          <a href="../about/" data-i18n="nav_about">About</a>
+          <a href="../manifesto/" data-i18n="nav_manifesto">Manifesto</a>
+          <a href="../resources/" data-i18n="nav_res">Resources</a>
+          <a href="../blog/" data-i18n="nav_blog">Blog</a>
+          <a href="../download/" data-i18n="nav_dl">Download Program</a>
+          <a href="../downloads/" data-i18n="nav_guide">Program Guide</a>
+          <a href="../open-source-compliance/" data-i18n="nav_compliance">Compliance</a>
+          <a href="../inventory/dashboard/" data-i18n="nav_demo">Live Demo</a>
+          <a href="../changelog/" data-i18n="nav_notes">Release notes</a>
+        </div>
+        <div class="foot-col">
+          <h3 data-i18n="foot_inv">Free Inventory</h3>
+          <a href="../free-food-truck-inventory-software/" data-i18n="foot_seo_ft">Food Truck Inventory Software</a>
+          <a href="../truck-inventory/" data-i18n="foot_seo_truck">Truck &amp; Cooler Inventory</a>
+          <a href="../prep-inventory/" data-i18n="foot_seo_prep">Prep Inventory</a>
+          <a href="../food-truck-inventory-software-comparison/" data-i18n="foot_seo_cmp">Compare Alternatives</a>
+          <h3 style="margin-top:1.4rem" data-i18n="foot_workshop">Workshop</h3>
+          <p data-i18n-html="foot_workshop_p">From <a href="https://intelligenthospitalitysystems.com/">Intelligent Hospitality Systems</a>. Also from us: <a href="https://www.reservationrelief.com/">Reservation Relief</a>, reservations on the website you already own.</p>
+          <p data-i18n-html="foot_resonant">Web &amp; systems notes: <a href="https://resonantwebdesign.com/industries/restaurants-hospitality-web-design/" rel="noopener noreferrer">Resonant</a></p>
+        </div>
+      </div>
+      <p class="foot-legal">© 2026 Open Source Food Truckin' — <span data-i18n="foot_legal">All the program is free and open source under GPLv3</span> · <a href="../open-source-compliance/" data-i18n="nav_license">License and source</a> · <a href="../privacy/" data-i18n="nav_privacy">Privacy</a> · <a href="../terms/" data-i18n="nav_terms">Terms</a></p>
+    </div>
+  </footer>
+  <script>
+    window.OFFER_TRACKER = {
+      siteId: "osft-landing",
+      ga4Id: "",
+      endpoint: "https://opensourcebarware.com/api/nexus-collect",
+      clarityId: "",
+      debug: false
+    };
+  </script>
+  <script src="/js/tracker.js?v=2" defer></script>
+  <script src="/js/site-v11.js"></script>
+</body>
+</html>

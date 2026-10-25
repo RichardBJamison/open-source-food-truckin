@@ -1,0 +1,4 @@
+Location,Order Id,Order #,Sent Date,Order Date,Check Id,Server,Table,Dining Area,Service,Dining Option,Item Selection Id,Item Id,Master Id,SKU,PLU,Menu Item,Menu Subgroup(s),Menu Group,Menu,Sales Category,Gross Price,Discount,Net Price,Qty,Tax,Void?,Deferred,Tax Exempt,Tax Inclusion Option,Dining Option Tax,Tab Name
+EXAMPLE Truck,1001,1,10/23/26 12:01 PM,10/23/26 12:00 PM,5001,Ana,,,Lunch,Take Out,9001,701,,,,Beef Taco,,Tacos,Truck Menu,Food,7.00,0.00,7.00,2,0.50,false,false,false,,,
+EXAMPLE Truck,1002,2,10/23/26 12:06 PM,10/23/26 12:05 PM,5002,Ana,,,Lunch,Take Out,9002,702,,,,Chicken Burrito,,Burritos,Truck Menu,Food,11.00,0.00,11.00,1,0.80,false,false,false,,,
+EXAMPLE Truck,1003,3,10/23/26 12:10 PM,10/23/26 12:09 PM,5003,Ana,,,Lunch,Take Out,9003,701,,,,Beef Taco,,Tacos,Truck Menu,Food,3.50,0.00,3.50,1,0.25,true,false,false,,,

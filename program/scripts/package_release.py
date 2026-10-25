@@ -15,9 +15,10 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 VERSION = (ROOT / "VERSION.txt").read_text(encoding="utf-8").split()[0]
 OUT = Path(sys.argv[1]).resolve() if len(sys.argv) > 1 else (ROOT.parent.parent / "packages")
-TOP = f"osft-{VERSION}"
+TOP = "open-source-food-truckin-program"  # same pattern as open-source-barware-program/
 
-SKIP_DIRS = {"data", ".venv", "__pycache__", ".pytest_cache", ".git"}
+SKIP_DIRS = {"data", ".venv", "__pycache__", ".pytest_cache", ".git", "tests"}
+SKIP_TOP = {"SIMULATION-REPORT.md", "PARITY.md", "KNOWN-GAPS.md", "scripts/smoke.py", "scripts/ui_smoke.py", "scripts/package_release.py"}
 SKIP_FILES = {".DS_Store", ".gitignore", ".gitattributes"}
 WIN_ONLY = {"Install.bat", "install.ps1", "Start.bat", "Stop.bat", "start-server.ps1"}
 MAC_ONLY = {"Install.command", "Start.command", "Stop.command", "START-HERE-MAC.html", "install.sh"}
@@ -30,7 +31,7 @@ COMMON = {"server.py", "requirements.txt", "VERSION.txt", "LICENSE.txt", "NOTICE
 def files():
     for p in sorted(ROOT.rglob("*")):
         rel = p.relative_to(ROOT)
-        if p.is_dir() or rel.parts[0] in SKIP_DIRS or any(x in SKIP_DIRS for x in rel.parts) or p.name in SKIP_FILES:
+        if p.is_dir() or rel.parts[0] in SKIP_DIRS or any(x in SKIP_DIRS for x in rel.parts) or p.name in SKIP_FILES or ".bak" in p.name or rel.as_posix() in SKIP_TOP:
             continue
         yield rel
 
@@ -45,7 +46,7 @@ def win_text(rel: Path) -> bytes:
 
 
 def build(kind: str) -> Path:
-    drop = MAC_ONLY if kind == "win" else WIN_ONLY
+    drop = set()  # Barware ships Mac + Windows launchers in both zips
     need = COMMON | (WIN_ONLY if kind == "win" else MAC_ONLY)
     have = {str(r) for r in files()}
     missing = [n for n in need if n not in have and not any(h.startswith(n + "/") for h in have)]

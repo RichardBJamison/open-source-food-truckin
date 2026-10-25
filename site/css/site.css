@@ -907,3 +907,14 @@ body.lot-page .site-footer { display: none; }
   .marquee-board { gap: 4px; }
   .marquee-board span { font-size: clamp(1.9rem, 10vw, 2.6rem); }
 }
+
+/* download thank-you modal (mirrors Barware DownloadThanksModal) */
+.dl-thanks{position:fixed;inset:0;z-index:9999;background:rgba(6,10,28,.82);display:flex;align-items:center;justify-content:center;padding:1rem;overflow:auto}
+.dl-thanks-card{position:relative;max-width:40rem;width:100%;background:#101a3a;color:#f4efe6;border:4px solid #111;border-radius:14px;box-shadow:8px 8px 0 #ff7a1a,0 0 28px rgba(63,240,224,.35);padding:1.6rem 1.5rem;font-family:Roboto,system-ui,sans-serif;line-height:1.5}
+.dl-thanks-card h2{font-family:"Luckiest Guy",cursive;color:#ff9a3c;font-size:2.2rem;margin:0;letter-spacing:.03em;text-shadow:3px 3px 0 #111}
+.dl-thanks-sub{color:#3ff0e0;font-weight:700;margin:.2rem 0 .8rem}
+.dl-thanks-card ol{padding-left:1.3rem}.dl-thanks-card li{margin:.45rem 0}
+.dl-thanks-card a{color:#3ff0e0}
+.dl-thanks-more,.dl-thanks-rr{font-size:.92rem;color:#c9c3d8}
+.dl-thanks-x{position:absolute;top:.5rem;right:.7rem;background:none;border:0;color:#fff;font-size:1.8rem;cursor:pointer}
+.dl-thanks-ok{margin-top:.6rem;background:#ff7a1a;color:#111;border:3px solid #111;border-radius:10px;padding:.6rem 1.3rem;font-family:"Luckiest Guy",cursive;font-size:1.1rem;cursor:pointer;box-shadow:4px 4px 0 #111}

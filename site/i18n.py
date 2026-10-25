@@ -774,8 +774,8 @@ add("dl_win_k", "For Windows",
     "Para Windows")
 add("dl_win", "Download for Windows",
     "Descargar para Windows")
-add("dl_fine", "v1.3.0-beta · about 680 KB · GPLv3, source included · Linux: use the Mac zip and run ./install.sh · see",
-    "v1.3.0-beta · unos 680 KB · GPLv3, código incluido · Linux: usa el zip de Mac y corre ./install.sh · ver")
+add("dl_fine", "v1.3.0-beta · about 710 KB · GPLv3, source included · Linux: use the Mac zip and run ./install.sh · see",
+    "v1.3.0-beta · unos 710 KB · GPLv3, código incluido · Linux: usa el zip de Mac y corre ./install.sh · ver")
 add("dl_count_k", "Trucks rolling",
     "Trucks rodando")
 add("dl_count_cap", "downloads served — free, every one",
@@ -784,8 +784,8 @@ add("dl_how_k", "After it downloads",
     "Cuando termine la descarga")
 add("dl_how_h", "Two minutes to your first count.",
     "Dos minutos para tu primer conteo.")
-add("dl_m1", "Open the zip in Downloads. You get a folder.",
-    "Abre el zip en Descargas. Aparece una carpeta.")
+add("dl_m1", "Open the zip in Downloads. You get the folder open-source-food-truckin-program.",
+    "Abre el zip en Descargas. Aparece la carpeta open-source-food-truckin-program.")
 add("dl_m2", "Double-click <b>Install.command</b>.",
     "Haz doble clic en <b>Install.command</b>.")
 add("dl_m3", "Mac says it can’t verify it? Open <b>System Settings › Privacy &amp; Security</b>, click <b>Open Anyway</b>, then double-click again. <b>START-HERE-MAC.html</b> in the folder shows it step by step.",

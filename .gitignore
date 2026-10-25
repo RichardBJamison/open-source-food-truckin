@@ -23,3 +23,7 @@ contacts.db
 contacts.db-*
 mail.json
 **/data/
+admin.json
+analytics.db
+analytics.db-*
+prod-data/

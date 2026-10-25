@@ -45,6 +45,8 @@ from datetime import datetime, timezone
 from functools import partial
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
+from urllib.parse import parse_qs, urlparse
+from analytics import Analytics
 
 EMAIL = re.compile(r"^[^@\s<>\"',;]+@[^@\s<>\"',;]+\.[A-Za-z]{2,}$")
 TOKEN_SECONDS = 15 * 60
@@ -170,6 +172,56 @@ def mailer(data_dir):
 
 class Handler(SimpleHTTPRequestHandler):
     data_dir: Path = Path("data")
+    stats: "Analytics" = None
+
+    def is_test(self):
+        return "osft_notrack=1" in (self.headers.get("Cookie") or "")
+
+    def track(self, event, **kw):
+        try:
+            self.stats.record(event, ip=self.client_ip(), ua=self.headers.get("User-Agent", ""),
+                              country=self.headers.get("CF-IPCountry", ""), test=kw.pop("test", False) or self.is_test(), **kw)
+        except Exception as e:  # analytics must never break the site
+            print("analytics error", e, flush=True)
+
+    def admin_ok(self):
+        q = parse_qs(urlparse(self.path).query)
+        return secrets.compare_digest((q.get("k") or [""])[0], self.stats.token)
+
+    def admin(self, path):
+        if not self.admin_ok():
+            return self.send_json(404, {"ok": False, "error": "not_found"})
+        q = parse_qs(urlparse(self.path).query)
+        if path == "/admin/stats.csv":
+            body, ctype = self.stats.csv().encode(), "text/csv; charset=utf-8"
+        else:
+            body, ctype = self.stats.dashboard((q.get("k") or [""])[0]).encode(), "text/html; charset=utf-8"
+        self.send_response(200)
+        self.send_header("Content-Type", ctype)
+        self.send_header("Cache-Control", "no-store")
+        self.send_header("X-Robots-Tag", "noindex")
+        if "optout" in q:  # mark this browser as test traffic (excluded from stats)
+            self.send_header("Set-Cookie", "osft_notrack=1; Path=/; Max-Age=31536000; SameSite=Lax; Secure")
+        self.send_header("Content-Length", str(len(body)))
+        self.end_headers()
+        self.wfile.write(body)
+
+    def collect(self):
+        try:
+            n = int(self.headers.get("Content-Length") or 0)
+            if n > 2048:
+                raise ValueError
+            b = json.loads(self.rfile.read(n) or b"{}")
+        except ValueError:
+            return self.send_json(400, {"ok": False})
+        ev = str(b.get("e", ""))
+        if ev in ("pageview", "download_click", "email_submit", "popup_open"):
+            u = urlparse(str(b.get("u", "")))
+            utm = {k: v[0] for k, v in parse_qs(u.query).items() if k.startswith("utm_")}
+            self.track(ev, path=u.path, ref=str(b.get("r", "")), lang=str(b.get("l", "")), os=str(b.get("os", "")), utm=utm)
+        self.send_response(204)
+        self.send_header("Cache-Control", "no-store")
+        self.end_headers()
 
     # -- helpers -------------------------------------------------------------------------------
     def send_json(self, code, obj):
@@ -201,6 +253,8 @@ class Handler(SimpleHTTPRequestHandler):
     # -- routes --------------------------------------------------------------------------------
     def do_GET(self):
         path = self.path.split("?", 1)[0]
+        if path in ("/admin/stats", "/admin/stats.csv"):
+            return self.admin(path)
         if path == "/api/download-count":
             return self.send_json(200, {"total": self.read_total()})
         if path.startswith("/get/"):
@@ -221,6 +275,8 @@ class Handler(SimpleHTTPRequestHandler):
         return super().do_HEAD()
 
     def do_POST(self):
+        if self.path.split("?", 1)[0] == "/api/collect":
+            return self.collect()
         if self.path.split("?", 1)[0] != "/api/download":
             return self.send_json(404, {"ok": False, "error": "not_found"})
         try:
@@ -283,6 +339,9 @@ class Handler(SimpleHTTPRequestHandler):
             os.replace(tmp, self.count_path())
             token = secrets.token_urlsafe(18)
             TOKENS[token] = (zp, now + TOKEN_SECONDS)
+        test = email.lower().startswith("osft-test+")
+        self.track("email_saved", lang=lang, os=kind, path="/download/", test=test)
+        self.track("download", lang=lang, os=kind, path="/download/", test=test)
         return self.send_json(200, {"ok": True, "url": f"/get/{token}", "total": total})
 
     def serve_token(self, token):
@@ -313,6 +372,7 @@ def main():
     a = ap.parse_args()
     Handler.data_dir = Path(a.data).resolve()
     migrate_csv(Handler.data_dir)
+    Handler.stats = Analytics(Handler.data_dir)
     threading.Thread(target=mailer, args=(Handler.data_dir,), daemon=True).start()
     WAKE.set()
     log(f"notify mail mode: {mail_config(Handler.data_dir)['mode']} -> {mail_config(Handler.data_dir)['to']}")

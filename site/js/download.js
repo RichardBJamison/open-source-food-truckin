@@ -62,6 +62,7 @@
       input.focus();
       return;
     }
+    if (window.osftBeacon) window.osftBeacon("email_submit", { os: os });
     var hp = form.querySelector(".dl-hp");
     form.classList.add("is-busy");
     fetch("/api/download", {
@@ -83,6 +84,7 @@
           el.classList.toggle("is-mine", el.getAttribute("data-os") === os);
         });
         if (window.OfferTracker) { try { window.OfferTracker.emit("download", { os: os }); } catch (e3) {} }
+        if (window.osftBeacon) { window.osftBeacon("download_click", { os: os }); window.osftBeacon("popup_open", { os: os }); }
         thanks(os, d.url);
         window.location.href = d.url;
         setTimeout(function () {

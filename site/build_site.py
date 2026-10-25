@@ -155,6 +155,7 @@ def shell(depth, title, desc, current, body, extra_body_class="", title_key=""):
     }};
   </script>
   <script src="/js/tracker.js?v=2" defer></script>
+  <script src="/js/beacon.js?v=1" defer></script>
   <script src="/js/site-v{JS}.js"></script>
 </body>
 </html>
@@ -1094,9 +1095,9 @@ def main():
         title_key="title_cat_prep",
     )
     simple_legal("privacy", "Privacy Policy — Open Source Food Truckin'", "Privacy", "Privacy Policy", [
-        "Last updated October 24, 2026. Open Source Food Truckin' is built to keep your truck data on your own machine. This page explains the limited information the website itself handles.",
+        "Last updated October 25, 2026. Open Source Food Truckin' is built to keep your truck data on your own machine. This page explains the limited information the website itself handles.",
         "The downloadable program runs on your own computer. Your counts, products, costs, and variance stay on your device unless you choose to share them. We do not receive that data. An optional AI key, if you add one, stays in data/config.json and is left out of backups.",
-        "This local lab site may send anonymous journey events (page views, time on page, outbound clicks) to the Open Source Barware collector used across family sites, tagged siteId osft-landing. No account is created. No email is required to download.",
+        "Downloads require an email address. We save it with the system you chose (Mac or Windows), your language and country, and use it only to tell you about new builds or fixes. We never sell it. The site counts visits with our own first-party analytics: page, referring site, language, country, device type, campaign tags, and download and signup events, grouped by hour. We do not store IP addresses; visitors are counted with a one-way code that changes every day. Anonymous journey events (page views, outbound clicks) also go to the Open Source Barware family collector, tagged osft-landing. No advertising trackers or advertising cookies. If your browser sends Do Not Track or Global Privacy Control, the page sends no analytics.",
         "To ask a privacy question, use the contact path on OpenSourceBarware.com or Intelligent Hospitality Systems.",
     ], "privacy", prefix="priv", title_key="title_priv")
     simple_legal("terms", "Terms of Use — Open Source Food Truckin'", "Terms", "Terms of Use", [

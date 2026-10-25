@@ -9,7 +9,7 @@ Speak your inventory section by section, reconcile invoices (optionally read by 
 | Folder | What it is |
 |---|---|
 | `program/` | The downloadable program (Python/Flask, port 5053). Install with `Install.command` (Mac) or `Install.bat` (Windows); see `program/README-INSTALL.txt`. |
-| `site/` | The website generator (`build_site.py`, `i18n.py`) and static site. `site/server/serve_site.py` serves it with the email-gated download and download counter. |
+| `site/` | The website generator (`build_site.py`, `i18n.py`) and static site. `site/server/serve_site.py` serves it with the email-gated download and download counter. Signups are saved to `contacts.db` and emailed to the owner (see `site/server/README.md`). |
 
 ## Develop
 

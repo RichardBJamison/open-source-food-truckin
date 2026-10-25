@@ -19,3 +19,7 @@ lab-data/
 *.tgz
 **/ai_secrets.json
 **/session_secret.txt
+contacts.db
+contacts.db-*
+mail.json
+**/data/
